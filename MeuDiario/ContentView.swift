@@ -116,7 +116,7 @@ struct EmotionView: View {
                     }
 
                     Button(action: {
-                        print("Perfil")
+                        print("Perfil") // aaaaa
                     }) {
                         Image(systemName: "person.crop.circle")
                     }
