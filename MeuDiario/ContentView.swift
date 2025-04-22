@@ -20,7 +20,7 @@ struct JournalView: View {
     var body: some View {
         NavigationView{
             Form{
-                VStack{
+                VStack{ //a
                     HStack(spacing: 0) {
                         Image(systemName: "person.fill")
                             .resizable()
