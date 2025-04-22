@@ -14,6 +14,10 @@
 		E65326582DA7EFDB00380B93 /* DiarioEntrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65326572DA7EFDB00380B93 /* DiarioEntrada.swift */; };
 		E653265A2DA7F07F00380B93 /* DiarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65326592DA7F07F00380B93 /* DiarioViewModel.swift */; };
 		E653265C2DA8007000380B93 /* Emocao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653265B2DA8007000380B93 /* Emocao.swift */; };
+		E6D68B132DB7DB5D003442A4 /* TagsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B122DB7DB5D003442A4 /* TagsHome.swift */; };
+		E6D68B152DB7DBF3003442A4 /* EmotionsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B142DB7DBF3003442A4 /* EmotionsHome.swift */; };
+		E6EA488D2DB7D29300C77477 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA488C2DB7D29300C77477 /* Tabbar.swift */; };
+		E6EA488F2DB7D4A400C77477 /* JournalHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA488E2DB7D4A400C77477 /* JournalHome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		E65326572DA7EFDB00380B93 /* DiarioEntrada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarioEntrada.swift; sourceTree = "<group>"; };
 		E65326592DA7F07F00380B93 /* DiarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarioViewModel.swift; sourceTree = "<group>"; };
 		E653265B2DA8007000380B93 /* Emocao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emocao.swift; sourceTree = "<group>"; };
+		E6D68B122DB7DB5D003442A4 /* TagsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHome.swift; sourceTree = "<group>"; };
+		E6D68B142DB7DBF3003442A4 /* EmotionsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsHome.swift; sourceTree = "<group>"; };
+		E6EA488C2DB7D29300C77477 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
+		E6EA488E2DB7D4A400C77477 /* JournalHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalHome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,13 +65,11 @@
 		E65326482DA7EF9700380B93 /* MeuDiario */ = {
 			isa = PBXGroup;
 			children = (
+				E6EA488B2DB7D25F00C77477 /* Data */,
+				E6EA48872DB7D1ED00C77477 /* Views */,
 				E65326492DA7EF9700380B93 /* MeuDiarioApp.swift */,
-				E653264B2DA7EF9700380B93 /* ContentView.swift */,
 				E653264D2DA7EF9B00380B93 /* Assets.xcassets */,
 				E653264F2DA7EF9B00380B93 /* Preview Content */,
-				E65326572DA7EFDB00380B93 /* DiarioEntrada.swift */,
-				E65326592DA7F07F00380B93 /* DiarioViewModel.swift */,
-				E653265B2DA8007000380B93 /* Emocao.swift */,
 			);
 			path = MeuDiario;
 			sourceTree = "<group>";
@@ -74,6 +80,52 @@
 				E65326502DA7EF9B00380B93 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E6EA48872DB7D1ED00C77477 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6EA488A2DB7D21C00C77477 /* Tags */,
+				E6EA48892DB7D20E00C77477 /* Emocoes */,
+				E6EA48882DB7D20400C77477 /* Journal */,
+				E653264B2DA7EF9700380B93 /* ContentView.swift */,
+				E6EA488C2DB7D29300C77477 /* Tabbar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E6EA48882DB7D20400C77477 /* Journal */ = {
+			isa = PBXGroup;
+			children = (
+				E6EA488E2DB7D4A400C77477 /* JournalHome.swift */,
+			);
+			path = Journal;
+			sourceTree = "<group>";
+		};
+		E6EA48892DB7D20E00C77477 /* Emocoes */ = {
+			isa = PBXGroup;
+			children = (
+				E6D68B142DB7DBF3003442A4 /* EmotionsHome.swift */,
+			);
+			path = Emocoes;
+			sourceTree = "<group>";
+		};
+		E6EA488A2DB7D21C00C77477 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				E6D68B122DB7DB5D003442A4 /* TagsHome.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		E6EA488B2DB7D25F00C77477 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E65326572DA7EFDB00380B93 /* DiarioEntrada.swift */,
+				E65326592DA7F07F00380B93 /* DiarioViewModel.swift */,
+				E653265B2DA8007000380B93 /* Emocao.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,8 +199,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E653265A2DA7F07F00380B93 /* DiarioViewModel.swift in Sources */,
+				E6D68B152DB7DBF3003442A4 /* EmotionsHome.swift in Sources */,
+				E6D68B132DB7DB5D003442A4 /* TagsHome.swift in Sources */,
+				E6EA488F2DB7D4A400C77477 /* JournalHome.swift in Sources */,
 				E653265C2DA8007000380B93 /* Emocao.swift in Sources */,
 				E653264C2DA7EF9700380B93 /* ContentView.swift in Sources */,
+				E6EA488D2DB7D29300C77477 /* Tabbar.swift in Sources */,
 				E65326582DA7EFDB00380B93 /* DiarioEntrada.swift in Sources */,
 				E653264A2DA7EF9700380B93 /* MeuDiarioApp.swift in Sources */,
 			);

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DiarioEntrada: Identifiable, Codable{
+struct DiarioEntrada: Hashable, Identifiable, Codable{
     var id = UUID()
     var titulo: String
     var descricao : String

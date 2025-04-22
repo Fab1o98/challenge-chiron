@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MeuDiarioApp: App {
+    
+    @State var diarioViewModel = DiarioViewModel()//estudar State
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBar()
+                .environmentObject(diarioViewModel)//estudar o EnvironmentObject
         }
     }
 }
