@@ -34,5 +34,3 @@ struct TabBar_Previews: PreviewProvider {
 
     }
 }
-
-
