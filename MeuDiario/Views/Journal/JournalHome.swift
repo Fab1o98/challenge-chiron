@@ -9,7 +9,7 @@ import SwiftUI
 
 struct JournalHome: View {
     
-    @State private var isAddingEntry = false
+    @State private var mostrarFormulario = false
     
     var body: some View {
         NavigationView{
@@ -40,6 +40,8 @@ struct JournalHome: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .multilineTextAlignment(.leading)
                         .lineLimit(nil)
+                    
+                    
                 }
             }
             .navigationTitle("Journal")
@@ -52,9 +54,12 @@ struct JournalHome: View {
                     }
                     
                     Button(action: {
-                        print("Adicionar")
+                        mostrarFormulario = true
                     }) {
                         Image(systemName: "plus")
+                    }
+                    .sheet(isPresented: $mostrarFormulario){
+                        Entradas_journal()
                     }
 
                     Button(action: {

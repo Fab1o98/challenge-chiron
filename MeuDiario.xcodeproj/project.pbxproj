@@ -14,6 +14,7 @@
 		E65326582DA7EFDB00380B93 /* DiarioEntrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65326572DA7EFDB00380B93 /* DiarioEntrada.swift */; };
 		E653265A2DA7F07F00380B93 /* DiarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65326592DA7F07F00380B93 /* DiarioViewModel.swift */; };
 		E653265C2DA8007000380B93 /* Emocao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653265B2DA8007000380B93 /* Emocao.swift */; };
+		E6AAEF9F2DB90B4A00911337 /* EntradasJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */; };
 		E6D68B132DB7DB5D003442A4 /* TagsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B122DB7DB5D003442A4 /* TagsHome.swift */; };
 		E6D68B152DB7DBF3003442A4 /* EmotionsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B142DB7DBF3003442A4 /* EmotionsHome.swift */; };
 		E6EA488D2DB7D29300C77477 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA488C2DB7D29300C77477 /* Tabbar.swift */; };
@@ -29,6 +30,7 @@
 		E65326572DA7EFDB00380B93 /* DiarioEntrada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarioEntrada.swift; sourceTree = "<group>"; };
 		E65326592DA7F07F00380B93 /* DiarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarioViewModel.swift; sourceTree = "<group>"; };
 		E653265B2DA8007000380B93 /* Emocao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emocao.swift; sourceTree = "<group>"; };
+		E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntradasJournal.swift; sourceTree = "<group>"; };
 		E6D68B122DB7DB5D003442A4 /* TagsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHome.swift; sourceTree = "<group>"; };
 		E6D68B142DB7DBF3003442A4 /* EmotionsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsHome.swift; sourceTree = "<group>"; };
 		E6EA488C2DB7D29300C77477 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		E6EA48882DB7D20400C77477 /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */,
 				E6EA488E2DB7D4A400C77477 /* JournalHome.swift */,
 			);
 			path = Journal;
@@ -201,6 +204,7 @@
 				E653265A2DA7F07F00380B93 /* DiarioViewModel.swift in Sources */,
 				E6D68B152DB7DBF3003442A4 /* EmotionsHome.swift in Sources */,
 				E6D68B132DB7DB5D003442A4 /* TagsHome.swift in Sources */,
+				E6AAEF9F2DB90B4A00911337 /* EntradasJournal.swift in Sources */,
 				E6EA488F2DB7D4A400C77477 /* JournalHome.swift in Sources */,
 				E653265C2DA8007000380B93 /* Emocao.swift in Sources */,
 				E653264C2DA7EF9700380B93 /* ContentView.swift in Sources */,
