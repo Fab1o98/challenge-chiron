@@ -59,7 +59,7 @@ struct JournalHome: View {
                         Image(systemName: "plus")
                     }
                     .sheet(isPresented: $mostrarFormulario){
-                        Entradas_journal()
+                        EntradasJournal()
                     }
 
                     Button(action: {
