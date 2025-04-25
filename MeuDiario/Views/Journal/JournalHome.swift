@@ -10,11 +10,12 @@ import SwiftUI
 struct JournalHome: View {
     
     @State private var mostrarFormulario = false
+    @StateObject private var diarioViewModel = DiarioViewModel()
     
     var body: some View {
         NavigationView{
             Form{
-                VStack{ //a
+                VStack{
                     HStack(spacing: 0) {
                         Image(systemName: "person.fill")
                             .resizable()
@@ -29,7 +30,7 @@ struct JournalHome: View {
                             .foregroundColor(.red)
                             .frame(width: 10, height: 10)
                     }
-
+                    
                     Text("Hobbies")
                         .font(.system(size: 20, weight : .bold))
                         .foregroundColor(.black)
@@ -40,8 +41,23 @@ struct JournalHome: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .multilineTextAlignment(.leading)
                         .lineLimit(nil)
-                    
-                    
+                }
+                Section(header: Text("Entries")
+                    .font(.system(size: 17, weight: .bold))
+                    .foregroundColor(.black)){
+                    ForEach(diarioViewModel.emocoes, id: \.self) { emocao in
+                        VStack{
+                            HStack {
+                                Text(emocao.nome)
+                                    .font(.system(size: 18, weight: .bold))
+                                    .foregroundColor(.black)
+                                Text("")
+                            }
+                            .padding()
+                            
+                            
+                        }
+                    }
                 }
             }
             .navigationTitle("Journal")
@@ -61,7 +77,7 @@ struct JournalHome: View {
                     .sheet(isPresented: $mostrarFormulario){
                         EntradasJournal()
                     }
-
+                    
                     Button(action: {
                         print("Perfil")
                     }) {

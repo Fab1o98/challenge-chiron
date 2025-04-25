@@ -11,6 +11,7 @@ private var dataAtual = Date()
 
 func dataFormatada() -> String{
     let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "en_US")
     dateFormatter.dateStyle = .medium
     dateFormatter.timeStyle = .none
     return dateFormatter.string(from: dataAtual)

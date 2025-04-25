@@ -20,6 +20,7 @@
 		E69C191E2DBBAD1300E5E7B3 /* DataFormatada.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C191D2DBBAD1300E5E7B3 /* DataFormatada.swift */; };
 		E69C19202DBBAD2F00E5E7B3 /* HorarioFormatado.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C191F2DBBAD2F00E5E7B3 /* HorarioFormatado.swift */; };
 		E69C19222DBBAD4B00E5E7B3 /* NewTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C19212DBBAD4B00E5E7B3 /* NewTag.swift */; };
+		E69C19282DBBC36000E5E7B3 /* SalvarEmocao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C19272DBBC36000E5E7B3 /* SalvarEmocao.swift */; };
 		E6AAEF9F2DB90B4A00911337 /* EntradasJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */; };
 		E6D68B132DB7DB5D003442A4 /* TagsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B122DB7DB5D003442A4 /* TagsHome.swift */; };
 		E6D68B152DB7DBF3003442A4 /* EmotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */; };
@@ -42,6 +43,7 @@
 		E69C191D2DBBAD1300E5E7B3 /* DataFormatada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatada.swift; sourceTree = "<group>"; };
 		E69C191F2DBBAD2F00E5E7B3 /* HorarioFormatado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioFormatado.swift; sourceTree = "<group>"; };
 		E69C19212DBBAD4B00E5E7B3 /* NewTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTag.swift; sourceTree = "<group>"; };
+		E69C19272DBBC36000E5E7B3 /* SalvarEmocao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalvarEmocao.swift; sourceTree = "<group>"; };
 		E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntradasJournal.swift; sourceTree = "<group>"; };
 		E6D68B122DB7DB5D003442A4 /* TagsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHome.swift; sourceTree = "<group>"; };
 		E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				E69C191D2DBBAD1300E5E7B3 /* DataFormatada.swift */,
 				E69C191F2DBBAD2F00E5E7B3 /* HorarioFormatado.swift */,
 				E69C19212DBBAD4B00E5E7B3 /* NewTag.swift */,
+				E69C19272DBBC36000E5E7B3 /* SalvarEmocao.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				E653265C2DA8007000380B93 /* Emocao.swift in Sources */,
 				E69C19202DBBAD2F00E5E7B3 /* HorarioFormatado.swift in Sources */,
 				E653264C2DA7EF9700380B93 /* ContentView.swift in Sources */,
+				E69C19282DBBC36000E5E7B3 /* SalvarEmocao.swift in Sources */,
 				E6EA488D2DB7D29300C77477 /* Tabbar.swift in Sources */,
 				E65326582DA7EFDB00380B93 /* DiarioEntrada.swift in Sources */,
 				E69C19222DBBAD4B00E5E7B3 /* NewTag.swift in Sources */,
