@@ -19,4 +19,8 @@ struct Emocao: Identifiable, Codable, Hashable{
     var cor: Color{
         Color(corHex)
     }
+    
+    
+   
+    
 }
