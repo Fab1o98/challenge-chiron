@@ -17,7 +17,7 @@ struct TabBar: View {
                 }
                 .tag(1)
             
-            EmotionsHome()
+            EmotionsView()
                 .tabItem {
                     Image(systemName: "face.smiling")
                     Text("Emotion")
