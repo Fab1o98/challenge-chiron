@@ -6,7 +6,8 @@ struct TagsHome: View {
                                GridItem(.flexible()),
                                GridItem(.flexible())]
     
-    
+    @State var modalAddTags:Bool = false
+
     var body: some View {
         NavigationView{
             VStack {

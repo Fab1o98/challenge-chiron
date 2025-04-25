@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6C126ECD2DBA600400FCB0A0 /* AdicionarTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C126ECC2DBA600400FCB0A0 /* AdicionarTags.swift */; };
 		6C126ED02DBA609C00FCB0A0 /* PerfilHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C126ECF2DBA609C00FCB0A0 /* PerfilHome.swift */; };
+		6C4D61052DBBB8050011E39A /* EmotionsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D61042DBBB8050011E39A /* EmotionsData.json */; };
 		E653264A2DA7EF9700380B93 /* MeuDiarioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65326492DA7EF9700380B93 /* MeuDiarioApp.swift */; };
 		E653264C2DA7EF9700380B93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653264B2DA7EF9700380B93 /* ContentView.swift */; };
 		E653264E2DA7EF9B00380B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E653264D2DA7EF9B00380B93 /* Assets.xcassets */; };
@@ -19,7 +20,6 @@
 		E69C191E2DBBAD1300E5E7B3 /* DataFormatada.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C191D2DBBAD1300E5E7B3 /* DataFormatada.swift */; };
 		E69C19202DBBAD2F00E5E7B3 /* HorarioFormatado.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C191F2DBBAD2F00E5E7B3 /* HorarioFormatado.swift */; };
 		E69C19222DBBAD4B00E5E7B3 /* NewTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C19212DBBAD4B00E5E7B3 /* NewTag.swift */; };
-		E69C19262DBBAF6E00E5E7B3 /* EmotionsData.strings in Resources */ = {isa = PBXBuildFile; fileRef = E69C19252DBBAF6E00E5E7B3 /* EmotionsData.strings */; };
 		E6AAEF9F2DB90B4A00911337 /* EntradasJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */; };
 		E6D68B132DB7DB5D003442A4 /* TagsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B122DB7DB5D003442A4 /* TagsHome.swift */; };
 		E6D68B152DB7DBF3003442A4 /* EmotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */; };
@@ -30,6 +30,7 @@
 /* Begin PBXFileReference section */
 		6C126ECC2DBA600400FCB0A0 /* AdicionarTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionarTags.swift; sourceTree = "<group>"; };
 		6C126ECF2DBA609C00FCB0A0 /* PerfilHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilHome.swift; sourceTree = "<group>"; };
+		6C4D61042DBBB8050011E39A /* EmotionsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmotionsData.json; sourceTree = "<group>"; };
 		E65326462DA7EF9700380B93 /* MeuDiario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuDiario.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E65326492DA7EF9700380B93 /* MeuDiarioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuDiarioApp.swift; sourceTree = "<group>"; };
 		E653264B2DA7EF9700380B93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		E69C191D2DBBAD1300E5E7B3 /* DataFormatada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatada.swift; sourceTree = "<group>"; };
 		E69C191F2DBBAD2F00E5E7B3 /* HorarioFormatado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioFormatado.swift; sourceTree = "<group>"; };
 		E69C19212DBBAD4B00E5E7B3 /* NewTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTag.swift; sourceTree = "<group>"; };
-		E69C19252DBBAF6E00E5E7B3 /* EmotionsData.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = EmotionsData.strings; sourceTree = "<group>"; };
 		E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntradasJournal.swift; sourceTree = "<group>"; };
 		E6D68B122DB7DB5D003442A4 /* TagsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHome.swift; sourceTree = "<group>"; };
 		E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsView.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				E65326572DA7EFDB00380B93 /* DiarioEntrada.swift */,
 				E65326592DA7F07F00380B93 /* DiarioViewModel.swift */,
 				E653265B2DA8007000380B93 /* Emocao.swift */,
-				E69C19252DBBAF6E00E5E7B3 /* EmotionsData.strings */,
+				6C4D61042DBBB8050011E39A /* EmotionsData.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E69C19262DBBAF6E00E5E7B3 /* EmotionsData.strings in Resources */,
 				E65326512DA7EF9B00380B93 /* Preview Assets.xcassets in Resources */,
 				E653264E2DA7EF9B00380B93 /* Assets.xcassets in Resources */,
+				6C4D61052DBBB8050011E39A /* EmotionsData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
