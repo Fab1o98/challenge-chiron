@@ -40,10 +40,3 @@ struct EmotionsView_Previews: PreviewProvider {
         EmotionsView()
     }
 }
-
-
-struct EmotionsHome_Previews: PreviewProvider {
-    static var previews: some View {
-        EmotionsView()
-    }
-}
