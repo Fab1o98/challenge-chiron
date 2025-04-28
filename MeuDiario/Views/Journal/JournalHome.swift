@@ -10,7 +10,7 @@ import SwiftUI
 struct JournalHome: View {
     
     @State private var mostrarFormulario = false
-    @StateObject private var diarioViewModel = DiarioViewModel()
+    @EnvironmentObject var diarioViewModel: DiarioViewModel
     
     var body: some View {
         NavigationView{
@@ -45,17 +45,26 @@ struct JournalHome: View {
                 Section(header: Text("Entries")
                     .font(.system(size: 17, weight: .bold))
                     .foregroundColor(.black)){
-                    ForEach(diarioViewModel.emocoes, id: \.self) { emocao in
+                    
+                    ForEach(diarioViewModel.entradas) { entrada in
                         VStack{
                             HStack {
-                                Text(emocao.nome)
+                                Text(entrada.emocao.nome)
                                     .font(.system(size: 18, weight: .bold))
                                     .foregroundColor(.black)
-                                Text("")
                             }
-                            .padding()
                             
+                            Text(entrada.comentario)
+                                .font(.system(size: 16))
+                                .foregroundColor(.gray)
                             
+                            Text("Intensidade: \(entrada.emocao.intensidade)")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            
+                            Text(dataFormatada(entrada.horario))
+                                .font(.caption)
+                                .foregroundColor(.secondary)
                         }
                     }
                 }

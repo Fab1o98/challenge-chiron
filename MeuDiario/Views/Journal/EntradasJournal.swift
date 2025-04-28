@@ -9,10 +9,10 @@ import SwiftUI
 
 struct EntradasJournal: View {
     
+    @EnvironmentObject var emocaoList: DiarioViewModel
     @Environment(\.dismiss) var dismiss
     
     @ObservedObject var tags = TagViewModel()
-    @ObservedObject var emocaoList = DiarioViewModel()
     @State var selectedTag = "Books"
     @State var intensidade: Double = 2.5
     @State var texto = ""
@@ -30,7 +30,7 @@ struct EntradasJournal: View {
                             .font(.system(size: 60))
                         
                         VStack{
-                            Text(dataFormatada())
+                            Text(dataFormatada(horario))
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -140,11 +140,14 @@ struct EntradasJournal: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Done") {
-                            if let emocaoSelecionada = emocao{
-                                EmocaoManager.shared.salvarEmocao(
-                                    nome: emocaoSelecionada.nome,
-                                    descricao: texto,
-                                    intensidade: Int(intensidade))
+                                if let emocaoSelecionada = emocao {
+                                let novaEntrada = DiarioEntrada(
+                                    emocao: emocaoSelecionada,
+                                    comentario: texto,
+                                    horario: horario,
+                                    intensidade: Int(intensidade)
+                                )
+                                emocaoList.entradas.append(novaEntrada)
                             }
                             dismiss()
                         }
@@ -158,5 +161,6 @@ struct EntradasJournal: View {
 struct EntradasJournal_Previews: PreviewProvider {
     static var previews: some View {
         EntradasJournal()
+            .environmentObject(DiarioViewModel())
     }
 }
