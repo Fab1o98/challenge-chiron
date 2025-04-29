@@ -10,7 +10,11 @@ import SwiftUI
 struct JournalHome: View {
     
     @State private var mostrarFormulario = false
+    @State private var needsRefresh = false
+        
+    @ObservedObject var tags = TagViewModel()
     @EnvironmentObject var diarioViewModel: DiarioViewModel
+    @StateObject private var emocaoManager = EmocaoManager()
     
     var body: some View {
         NavigationView{
@@ -44,27 +48,47 @@ struct JournalHome: View {
                 }
                 Section(header: Text("Entries")
                     .font(.system(size: 17, weight: .bold))
-                    .foregroundColor(.black)){
+                            .foregroundColor(.black)){
                     
-                    ForEach(diarioViewModel.entradas) { entrada in
-                        VStack{
-                            HStack {
-                                Text(entrada.emocao.nome)
-                                    .font(.system(size: 18, weight: .bold))
-                                    .foregroundColor(.black)
+                    let registros = emocaoManager.listarRegistros()
+                                        
+                    if registros.isEmpty{
+                        Text("Nenhuma entrada regitrada ainda.")
+                            .foregroundColor(.gray)
+                    } else{
+                        ForEach(registros, id: \.horario){ registro in
+                            HStack{
+                                VStack(alignment: .leading, spacing: 6){
+                                    Text(registro.emocao)
+                                        .font(Font.custom("SF Pro", size: 17))
+                                        .foregroundColor(.black)
+                                    
+                                    Text(registro.comentario)
+                                        .font(Font.custom("SF Pro", size: 15))
+                                        .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
+                                    
+                                    Text(dataFormatada(registro.horario))
+                                        .font(Font.custom("SF Pro", size: 15))
+                                        .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
+                                    
+                                }
+                                
+                                Spacer()
+                                
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(LinearGradient(
+                                            gradient: Gradient(colors: [.red, .orange]),
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                        ))
+
+                                    Text("Intensidade: \(registro.intensidade)")
+                                        .font(Font.custom("SF Pro", size: 15))
+                                        .foregroundColor(.white)
+                                }
+                                .frame(width: 150, height: 70)
                             }
-                            
-                            Text(entrada.comentario)
-                                .font(.system(size: 16))
-                                .foregroundColor(.gray)
-                            
-                            Text("Intensidade: \(entrada.emocao.intensidade)")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                            
-                            Text(dataFormatada(entrada.horario))
-                                .font(.caption)
-                                .foregroundColor(.secondary)
                         }
                     }
                 }
@@ -83,7 +107,9 @@ struct JournalHome: View {
                     }) {
                         Image(systemName: "plus")
                     }
-                    .sheet(isPresented: $mostrarFormulario){
+                    .sheet(isPresented: $mostrarFormulario, onDismiss: {
+                        needsRefresh.toggle()
+                    }){
                         EntradasJournal()
                     }
                     
@@ -94,6 +120,7 @@ struct JournalHome: View {
                     }
                 }
             }
+            .id(needsRefresh)
         }
     }
 }

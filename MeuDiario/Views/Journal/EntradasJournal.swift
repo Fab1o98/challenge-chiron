@@ -13,6 +13,7 @@ struct EntradasJournal: View {
     @Environment(\.dismiss) var dismiss
     
     @ObservedObject var tags = TagViewModel()
+    @StateObject private var emocaoManager = EmocaoManager()
     @State var selectedTag = "Books"
     @State var intensidade: Double = 2.5
     @State var texto = ""
@@ -140,15 +141,12 @@ struct EntradasJournal: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Done") {
-                                if let emocaoSelecionada = emocao {
-                                let novaEntrada = DiarioEntrada(
-                                    emocao: emocaoSelecionada,
+                            emocaoManager.salvarEmocaoJSON(
+                                emocao: emocao?.nome ?? "Books",
                                     comentario: texto,
                                     horario: horario,
                                     intensidade: Int(intensidade)
                                 )
-                                emocaoList.entradas.append(novaEntrada)
-                            }
                             dismiss()
                         }
                     }
