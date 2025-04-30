@@ -16,7 +16,6 @@ class TagDataLoader{
         }
 }
 
-
 struct TagStorage {
     
     static let filename = "userTags.json"

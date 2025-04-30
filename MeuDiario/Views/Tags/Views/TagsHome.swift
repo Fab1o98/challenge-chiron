@@ -4,17 +4,16 @@ struct TagsHome: View {
     @State private var tags: [TagsBasicas] = TagStorage.load()
     @State private var isEditing: Bool = false
     @State private var selectedTag: TagsBasicas?
-    @State private var showSearchText: Bool = false
     @State private var searchText: String = ""
     @State private var showingAddSheet = false
 
     var filteredTags: [TagsBasicas] {
-           if searchText.isEmpty {
-               return tags
-           } else {
-               return tags.filter { $0.nome.localizedCaseInsensitiveContains(searchText) }
-           }
-       }
+        if searchText.isEmpty {
+            return tags
+        } else {
+            return tags.filter { $0.nome.lowercased().contains(searchText.lowercased()) }
+        }
+    }
 
     var body: some View {
         NavigationView {
