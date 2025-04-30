@@ -56,38 +56,65 @@ struct JournalHome: View {
                         Text("Nenhuma entrada regitrada ainda.")
                             .foregroundColor(.gray)
                     } else{
-                        ForEach(registros, id: \.horario){ registro in
-                            HStack{
-                                VStack(alignment: .leading, spacing: 6){
-                                    Text(registro.emocao)
-                                        .font(Font.custom("SF Pro", size: 17))
-                                        .foregroundColor(.black)
+                        ForEach(registros.sorted(by: { $0.horario > $1.horario}), id: \.horario){ registro in
+                            ZStack{
+                                HStack{
+                                    VStack(alignment: .leading, spacing: 6){
+                                        Text(registro.emocao)
+                                            .font(Font.custom("SF Pro", size: 17))
+                                            .foregroundColor(.black)
+                                        
+                                        Text(registro.comentario)
+                                            .font(Font.custom("SF Pro", size: 15))
+                                            .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
+                                        
+                                        Text(dataFormatada(registro.horario))
+                                            .font(Font.custom("SF Pro", size: 15))
+                                            .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
+                                    }
+                                    .frame(width: 150, alignment: .leading)
                                     
-                                    Text(registro.comentario)
-                                        .font(Font.custom("SF Pro", size: 15))
-                                        .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
+                                    Spacer()
                                     
-                                    Text(dataFormatada(registro.horario))
-                                        .font(Font.custom("SF Pro", size: 15))
-                                        .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
+                                    HStack{
+                                        Text("\(registro.intensidade)")
+                                            .font(Font.custom("SF Pro", size: 25)
+                                                    .weight(.semibold)
+                                            )
+                                        
+                                        Text("Intensidade")
+                                            .font(Font.custom("Sf Pro", size: 15)
+                                                    .weight(.semibold)
+                                            )
+                                    }
                                     
-                                }
-                                
-                                Spacer()
-                                
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .fill(LinearGradient(
-                                            gradient: Gradient(colors: [.red, .orange]),
-                                            startPoint: .leading,
-                                            endPoint: .trailing
-                                        ))
+                                    //Spacer()
+                                    
+                                    /*ZStack {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(LinearGradient(
+                                                gradient: Gradient(colors: [.red, .orange]),
+                                                startPoint: .leading,
+                                                endPoint: .trailing
+                                            ))
 
-                                    Text("Intensidade: \(registro.intensidade)")
-                                        .font(Font.custom("SF Pro", size: 15))
-                                        .foregroundColor(.white)
+                                        Text("Intensidade: \(registro.intensidade)")
+                                            .font(Font.custom("SF Pro", size: 15))
+                                            .foregroundColor(.white)
+                                    }
+                                    .frame(width: 150, height: 70)*/
                                 }
-                                .frame(width: 150, height: 70)
+                                .frame(width: 310, height: 70)
+                                .background(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [.white, .orange]),
+                                        startPoint: UnitPoint(x: 0.60, y: 0),
+                                        endPoint: UnitPoint(x: 1, y: 0)
+                                    )
+                                        .frame(width: 350, height: 100)
+                                )
+                                .listRowInsets(EdgeInsets())
+                                .listRowBackground(Color.clear)
                             }
                         }
                     }
