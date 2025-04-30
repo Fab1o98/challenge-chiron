@@ -3,7 +3,7 @@
 //  MeuDiario
 //
 //  Created by Aluno 47 on 24/04/25.
-//
+// .
 
 import SwiftUI
 
