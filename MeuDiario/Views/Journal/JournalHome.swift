@@ -10,11 +10,16 @@ import SwiftUI
 struct JournalHome: View {
     
     @State private var mostrarFormulario = false
+    @State private var needsRefresh = false
+        
+    @ObservedObject var tags = TagViewModel()
+    @EnvironmentObject var diarioViewModel: DiarioViewModel
+    @StateObject private var emocaoManager = EmocaoManager()
     
     var body: some View {
         NavigationView{
             Form{
-                VStack{ //a
+                VStack{
                     HStack(spacing: 0) {
                         Image(systemName: "person.fill")
                             .resizable()
@@ -29,7 +34,7 @@ struct JournalHome: View {
                             .foregroundColor(.red)
                             .frame(width: 10, height: 10)
                     }
-
+                    
                     Text("Hobbies")
                         .font(.system(size: 20, weight : .bold))
                         .foregroundColor(.black)
@@ -40,8 +45,79 @@ struct JournalHome: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .multilineTextAlignment(.leading)
                         .lineLimit(nil)
+                }
+                Section(header: Text("Entries")
+                    .font(.system(size: 17, weight: .bold))
+                            .foregroundColor(.black)){
                     
-                    
+                    let registros = emocaoManager.listarRegistros()
+                                        
+                    if registros.isEmpty{
+                        Text("Nenhuma entrada regitrada ainda.")
+                            .foregroundColor(.gray)
+                    } else{
+                        ForEach(registros.sorted(by: { $0.horario > $1.horario}), id: \.horario){ registro in
+                            ZStack{
+                                HStack{
+                                    VStack(alignment: .leading, spacing: 6){
+                                        Text(registro.emocao)
+                                            .font(Font.custom("SF Pro", size: 17))
+                                            .foregroundColor(.black)
+                                        
+                                        Text(registro.comentario)
+                                            .font(Font.custom("SF Pro", size: 15))
+                                            .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
+                                        
+                                        Text(dataFormatada(registro.horario))
+                                            .font(Font.custom("SF Pro", size: 15))
+                                            .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
+                                    }
+                                    .frame(width: 150, alignment: .leading)
+                                    
+                                    Spacer()
+                                    
+                                    HStack{
+                                        Text("\(registro.intensidade)")
+                                            .font(Font.custom("SF Pro", size: 25)
+                                                    .weight(.semibold)
+                                            )
+                                        
+                                        Text("Intensidade")
+                                            .font(Font.custom("Sf Pro", size: 15)
+                                                    .weight(.semibold)
+                                            )
+                                    }
+                                    
+                                    //Spacer()
+                                    
+                                    /*ZStack {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(LinearGradient(
+                                                gradient: Gradient(colors: [.red, .orange]),
+                                                startPoint: .leading,
+                                                endPoint: .trailing
+                                            ))
+
+                                        Text("Intensidade: \(registro.intensidade)")
+                                            .font(Font.custom("SF Pro", size: 15))
+                                            .foregroundColor(.white)
+                                    }
+                                    .frame(width: 150, height: 70)*/
+                                }
+                                .frame(width: 310, height: 70)
+                                .background(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [.white, .orange]),
+                                        startPoint: UnitPoint(x: 0.60, y: 0),
+                                        endPoint: UnitPoint(x: 1, y: 0)
+                                    )
+                                        .frame(width: 350, height: 100)
+                                )
+                                .listRowInsets(EdgeInsets())
+                                .listRowBackground(Color.clear)
+                            }
+                        }
+                    }
                 }
             }
             .navigationTitle("Journal")
@@ -58,10 +134,12 @@ struct JournalHome: View {
                     }) {
                         Image(systemName: "plus")
                     }
-                    .sheet(isPresented: $mostrarFormulario){
+                    .sheet(isPresented: $mostrarFormulario, onDismiss: {
+                        needsRefresh.toggle()
+                    }){
                         EntradasJournal()
                     }
-
+                    
                     Button(action: {
                         print("Perfil")
                     }) {
@@ -69,6 +147,7 @@ struct JournalHome: View {
                     }
                 }
             }
+            .id(needsRefresh)
         }
     }
 }

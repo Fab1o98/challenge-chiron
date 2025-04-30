@@ -1,16 +1,9 @@
-//
-//  File.swift
-//  MeuDiario
-//
-//  Created by Aluno 14 on 4/10/25.
-//
-
 import Foundation
 
-struct DiarioEntrada: Hashable, Identifiable, Codable{
+struct DiarioEntrada: Codable, Identifiable {
     var id = UUID()
-    var titulo: String
-    var descricao : String
-    var data: Date
     var emocao: Emocao
+    var comentario: String
+    var horario: Date
+    var intensidade: Int
 }
