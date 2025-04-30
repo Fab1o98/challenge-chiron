@@ -11,7 +11,8 @@ struct SelectedEmotionView: View {
     
     @EnvironmentObject var diarioviewModel: DiarioViewModel
     @Environment(\.dismiss) var dismiss
-
+    
+    let colunas = Array(repeating: GridItem(.flexible(), spacing: 1), count: 4)
     
     var body: some View {
         NavigationView{
@@ -24,6 +25,9 @@ struct SelectedEmotionView: View {
                     .ignoresSafeArea()
                 
                 VStack{
+                    
+                    Text("Aqui tem que colocar as tags que estão vinculadas")
+                    
                     HStack{
                         Text("Emoção")
                             .font(Font.custom("SF Pro", size: 30)
@@ -39,6 +43,11 @@ struct SelectedEmotionView: View {
                     }
                     .frame(width: 340, height: 45)
                     .padding(.vertical, 40)
+                    
+                    
+                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.")
+                        .frame(width: 340, height: 500, alignment: .leading)
+                        .padding(.vertical, -100)
                     
                     Spacer()
                 }
