@@ -25,6 +25,7 @@
 		E6D68B152DB7DBF3003442A4 /* EmotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */; };
 		E6EA488D2DB7D29300C77477 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA488C2DB7D29300C77477 /* Tabbar.swift */; };
 		E6EA488F2DB7D4A400C77477 /* JournalHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA488E2DB7D4A400C77477 /* JournalHome.swift */; };
+		E705103F2DC0EF2500257A51 /* EmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705103E2DC0EF2500257A51 /* EmotionPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsView.swift; sourceTree = "<group>"; };
 		E6EA488C2DB7D29300C77477 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		E6EA488E2DB7D4A400C77477 /* JournalHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalHome.swift; sourceTree = "<group>"; };
+		E705103E2DC0EF2500257A51 /* EmotionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */,
+				E705103E2DC0EF2500257A51 /* EmotionPageView.swift */,
 			);
 			path = Emocoes;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				6C126ECD2DBA600400FCB0A0 /* AdicionarTags.swift in Sources */,
 				E653265A2DA7F07F00380B93 /* DiarioViewModel.swift in Sources */,
 				E6D68B152DB7DBF3003442A4 /* EmotionsView.swift in Sources */,
+				E705103F2DC0EF2500257A51 /* EmotionPageView.swift in Sources */,
 				E6D68B132DB7DB5D003442A4 /* TagsHome.swift in Sources */,
 				E6AAEF9F2DB90B4A00911337 /* EntradasJournal.swift in Sources */,
 				E6EA488F2DB7D4A400C77477 /* JournalHome.swift in Sources */,
