@@ -9,8 +9,9 @@ import Foundation
 
 private var dataAtual = Date()
 
-func dataFormatada() -> String{
+func dataFormatada(_ date: Date) -> String{
     let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "en_US")
     dateFormatter.dateStyle = .medium
     dateFormatter.timeStyle = .none
     return dateFormatter.string(from: dataAtual)

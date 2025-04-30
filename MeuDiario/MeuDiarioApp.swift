@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct MeuDiarioApp: App {
     
-    @State var diarioViewModel = DiarioViewModel()//estudar State
+    @StateObject var diarioViewModel = DiarioViewModel()//estudar State
     
     var body: some Scene {
         WindowGroup {

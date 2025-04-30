@@ -18,6 +18,7 @@
 		6C48054B2DBC03AA004900F0 /* EditarTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C48054A2DBC03AA004900F0 /* EditarTags.swift */; };
 		6C4D61052DBBB8050011E39A /* EmotionsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D61042DBBB8050011E39A /* EmotionsData.json */; };
 		6CA30C632DC014AE0041D6AC /* NewTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA30C622DC014AE0041D6AC /* NewTabBar.swift */; };
+		E62004472DC0FCB80033C888 /* NewTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62004462DC0FCB80033C888 /* NewTag.swift */; };
 		E653264A2DA7EF9700380B93 /* MeuDiarioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65326492DA7EF9700380B93 /* MeuDiarioApp.swift */; };
 		E653264C2DA7EF9700380B93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653264B2DA7EF9700380B93 /* ContentView.swift */; };
 		E653264E2DA7EF9B00380B93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E653264D2DA7EF9B00380B93 /* Assets.xcassets */; };
@@ -25,9 +26,10 @@
 		E65326582DA7EFDB00380B93 /* DiarioEntrada.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65326572DA7EFDB00380B93 /* DiarioEntrada.swift */; };
 		E653265A2DA7F07F00380B93 /* DiarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65326592DA7F07F00380B93 /* DiarioViewModel.swift */; };
 		E653265C2DA8007000380B93 /* Emocao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E653265B2DA8007000380B93 /* Emocao.swift */; };
+		E6805C9E2DC2538E0086C531 /* SelectedEmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6805C9D2DC2538E0086C531 /* SelectedEmotionView.swift */; };
 		E69C191E2DBBAD1300E5E7B3 /* DataFormatada.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C191D2DBBAD1300E5E7B3 /* DataFormatada.swift */; };
 		E69C19202DBBAD2F00E5E7B3 /* HorarioFormatado.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C191F2DBBAD2F00E5E7B3 /* HorarioFormatado.swift */; };
-		E69C19222DBBAD4B00E5E7B3 /* NewTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C19212DBBAD4B00E5E7B3 /* NewTag.swift */; };
+		E69C19282DBBC36000E5E7B3 /* SalvarEmocao.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69C19272DBBC36000E5E7B3 /* SalvarEmocao.swift */; };
 		E6AAEF9F2DB90B4A00911337 /* EntradasJournal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */; };
 		E6D68B132DB7DB5D003442A4 /* TagsHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B122DB7DB5D003442A4 /* TagsHome.swift */; };
 		E6D68B152DB7DBF3003442A4 /* EmotionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */; };
@@ -47,6 +49,7 @@
 		6C48054A2DBC03AA004900F0 /* EditarTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarTags.swift; sourceTree = "<group>"; };
 		6C4D61042DBBB8050011E39A /* EmotionsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmotionsData.json; sourceTree = "<group>"; };
 		6CA30C622DC014AE0041D6AC /* NewTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabBar.swift; sourceTree = "<group>"; };
+		E62004462DC0FCB80033C888 /* NewTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTag.swift; sourceTree = "<group>"; };
 		E65326462DA7EF9700380B93 /* MeuDiario.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeuDiario.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E65326492DA7EF9700380B93 /* MeuDiarioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeuDiarioApp.swift; sourceTree = "<group>"; };
 		E653264B2DA7EF9700380B93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,9 +58,10 @@
 		E65326572DA7EFDB00380B93 /* DiarioEntrada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarioEntrada.swift; sourceTree = "<group>"; };
 		E65326592DA7F07F00380B93 /* DiarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarioViewModel.swift; sourceTree = "<group>"; };
 		E653265B2DA8007000380B93 /* Emocao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emocao.swift; sourceTree = "<group>"; };
+		E6805C9D2DC2538E0086C531 /* SelectedEmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedEmotionView.swift; sourceTree = "<group>"; };
 		E69C191D2DBBAD1300E5E7B3 /* DataFormatada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatada.swift; sourceTree = "<group>"; };
 		E69C191F2DBBAD2F00E5E7B3 /* HorarioFormatado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorarioFormatado.swift; sourceTree = "<group>"; };
-		E69C19212DBBAD4B00E5E7B3 /* NewTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTag.swift; sourceTree = "<group>"; };
+		E69C19272DBBC36000E5E7B3 /* SalvarEmocao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalvarEmocao.swift; sourceTree = "<group>"; };
 		E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntradasJournal.swift; sourceTree = "<group>"; };
 		E6D68B122DB7DB5D003442A4 /* TagsHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsHome.swift; sourceTree = "<group>"; };
 		E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsView.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				E69C191F2DBBAD2F00E5E7B3 /* HorarioFormatado.swift */,
 				E69C19212DBBAD4B00E5E7B3 /* NewTag.swift */,
 				6C3C762D2DBBC13C00F010B8 /* AdicionarModal.swift */,
+				E69C19272DBBC36000E5E7B3 /* SalvarEmocao.swift */,
+				E62004462DC0FCB80033C888 /* NewTag.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -189,6 +195,7 @@
 			children = (
 				E6AAEF9E2DB90B4A00911337 /* EntradasJournal.swift */,
 				E6EA488E2DB7D4A400C77477 /* JournalHome.swift */,
+				E6805C9D2DC2538E0086C531 /* SelectedEmotionView.swift */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -307,10 +314,12 @@
 				E69C19202DBBAD2F00E5E7B3 /* HorarioFormatado.swift in Sources */,
 				E653264C2DA7EF9700380B93 /* ContentView.swift in Sources */,
 				6C001FF02DC00CB200AFB48B /* Menu.swift in Sources */,
+				E69C19282DBBC36000E5E7B3 /* SalvarEmocao.swift in Sources */,
 				E6EA488D2DB7D29300C77477 /* Tabbar.swift in Sources */,
 				6C001FA92DBFC0C500AFB48B /* TagGrid.swift in Sources */,
 				E65326582DA7EFDB00380B93 /* DiarioEntrada.swift in Sources */,
-				E69C19222DBBAD4B00E5E7B3 /* NewTag.swift in Sources */,
+				E6805C9E2DC2538E0086C531 /* SelectedEmotionView.swift in Sources */,
+				E62004472DC0FCB80033C888 /* NewTag.swift in Sources */,
 				E653264A2DA7EF9700380B93 /* MeuDiarioApp.swift in Sources */,
 				E69C191E2DBBAD1300E5E7B3 /* DataFormatada.swift in Sources */,
 				6C3001492DC2588D00C0308C /* TagStorage.swift in Sources */,
