@@ -14,7 +14,7 @@ struct EntradasJournal: View {
     
     @ObservedObject var tags = TagViewModel()
     @StateObject private var emocaoManager = EmocaoManager()
-    @State var selectedTag = "Books"
+    @State var selectedTag = "Felicidade"
     @State var intensidade: Double = 2.5
     @State var texto = ""
     @State var horario = Date()
