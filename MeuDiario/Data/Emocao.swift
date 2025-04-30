@@ -13,10 +13,9 @@ struct Emocao: Identifiable, Codable, Hashable{
     var nome: String
     var descricao: String
     var intensidade: Int
-    var corHex: String
-    var imagemNome: String
+
     
-    var cor: Color{
-        Color(corHex)
-    }
+    
+   
+    
 }

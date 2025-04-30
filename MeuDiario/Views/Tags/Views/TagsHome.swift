@@ -1,0 +1,63 @@
+//.
+import SwiftUI
+
+struct TagsHome: View {
+    @State private var tags: [TagsBasicas] = TagStorage.load()
+    @State private var isEditing: Bool = false
+    @State private var selectedTag: TagsBasicas?
+    @State private var searchText: String = ""
+    @State private var showingAddSheet = false
+
+    var filteredTags: [TagsBasicas] {
+        if searchText.isEmpty {
+            return tags
+        } else {
+            return tags.filter { $0.nome.lowercased().contains(searchText.lowercased()) }
+        }
+    }
+
+    var body: some View {
+        NavigationView {
+            VStack {
+                Divider().foregroundColor(.black)
+
+                TagGrid(tags: $tags,
+                        filteredTags: filteredTags,
+                        fireEditing: $isEditing,
+                        selectedTag: $selectedTag)
+
+                Spacer()
+            }
+            .navigationTitle("Tags")
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showingAddSheet = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                    NavigationLink(destination: PerfilHome(), label: {
+                        Image(systemName: "person.circle")
+                    })
+                }
+            }
+            .sheet(isPresented: $showingAddSheet) {
+                AdicionarTags(tags: $tags)
+            }
+            .sheet(isPresented: $isEditing) {
+                if let tag = selectedTag,
+                   let index = tags.firstIndex(where: { $0.id == tag.id }) {
+                    EditarTags(tag: $tags[index])
+                }
+            }
+            .searchable(text: $searchText)
+        }
+    }
+}
+
+
+struct TagsHome_Previews: PreviewProvider {
+    static var previews: some View {
+            TagsHome()
+    }
+}
