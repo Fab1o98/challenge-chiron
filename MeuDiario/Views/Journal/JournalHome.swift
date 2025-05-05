@@ -11,7 +11,8 @@ struct JournalHome: View {
     
     @State private var mostrarFormulario = false
     @State private var needsRefresh = false
-        
+    @State private var isShowingAddReflection = false
+    
     @ObservedObject var tags = TagViewModel()
     @EnvironmentObject var diarioViewModel: DiarioViewModel
     @StateObject private var emocaoManager = EmocaoManager()
@@ -19,33 +20,38 @@ struct JournalHome: View {
     var body: some View {
         NavigationView{
             Form{
-                VStack{
-                    HStack(spacing: 0) {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .foregroundColor(.blue)
-                            .frame(width: 20, height: 20)
-                        Text("Reflection Prompts")
-                            .foregroundColor(.blue)
+                Button {
+                    isShowingAddReflection = true
+                } label: {
+                    VStack{
+                        HStack(spacing: 0) {
+                            Image(systemName: "person.fill")
+                                .resizable()
+                                .foregroundColor(.blue)
+                                .frame(width: 20, height: 20)
+                            Text("Reflection Prompts")
+                                .foregroundColor(.blue)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 8)
+                            Image(systemName: "circle.fill")
+                                .resizable()
+                                .foregroundColor(.red)
+                                .frame(width: 10, height: 10)
+                        }
+                        
+                        Text("Hobbies")
+                            .font(.system(size: 20, weight : .bold))
+                            .foregroundColor(.black)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, 8)
-                        Image(systemName: "circle.fill")
-                            .resizable()
-                            .foregroundColor(.red)
-                            .frame(width: 10, height: 10)
+                        Text("Outside of media consumptions, do you have a hobby?")
+                            .font(.system(size: 18, weight: .regular))
+                            .foregroundColor(.black)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(nil)
                     }
-                    
-                    Text("Hobbies")
-                        .font(.system(size: 20, weight : .bold))
-                        .foregroundColor(.black)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Outside of media consumptions, do you have a hobby?")
-                        .font(.system(size: 18, weight: .regular))
-                        .foregroundColor(.black)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(nil)
                 }
+
                 Section(header: Text("Entries")
                     .font(.system(size: 17, weight: .bold))
                             .foregroundColor(.black)){
@@ -148,6 +154,9 @@ struct JournalHome: View {
                 }
             }
             .id(needsRefresh)
+            .sheet(isPresented: $isShowingAddReflection) {
+                AddReflection(isShowingAddReflection: $isShowingAddReflection)
+            }
         }
     }
 }
