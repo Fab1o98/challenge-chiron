@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		24AACDAC2DC8E09100F2EA02 /* SaveReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AACDAB2DC8E09100F2EA02 /* SaveReflection.swift */; };
 		24AACDAE2DC8E0E400F2EA02 /* AddReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AACDAD2DC8E0E300F2EA02 /* AddReflection.swift */; };
+		24AACDB32DC8F12C00F2EA02 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AACDB22DC8F12C00F2EA02 /* GalleryView.swift */; };
 		6C001FA72DBFB8A500AFB48B /* TagsBasicas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C001FA62DBFB8A500AFB48B /* TagsBasicas.swift */; };
 		6C001FA92DBFC0C500AFB48B /* TagGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C001FA82DBFC0C500AFB48B /* TagGrid.swift */; };
 		6C001FAB2DBFC86200AFB48B /* tagsBasicasData.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C001FAA2DBFC86200AFB48B /* tagsBasicasData.json */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		24AACDAB2DC8E09100F2EA02 /* SaveReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveReflection.swift; sourceTree = "<group>"; };
 		24AACDAD2DC8E0E300F2EA02 /* AddReflection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReflection.swift; sourceTree = "<group>"; };
+		24AACDB22DC8F12C00F2EA02 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		6C001FA62DBFB8A500AFB48B /* TagsBasicas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsBasicas.swift; sourceTree = "<group>"; };
 		6C001FA82DBFC0C500AFB48B /* TagGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagGrid.swift; sourceTree = "<group>"; };
 		6C001FAA2DBFC86200AFB48B /* tagsBasicasData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tagsBasicasData.json; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24AACDAF2DC8F0E800F2EA02 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				24AACDB22DC8F12C00F2EA02 /* GalleryView.swift */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
 		6C001FA42DBFB84E00AFB48B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +196,7 @@
 		E6EA48872DB7D1ED00C77477 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				24AACDAF2DC8F0E800F2EA02 /* Gallery */,
 				6CA30C642DC016B00041D6AC /* Core */,
 				6C126ECE2DBA608800FCB0A0 /* Perfil */,
 				E6EA488A2DB7D21C00C77477 /* Tags */,
@@ -315,6 +326,7 @@
 				E705103F2DC0EF2500257A51 /* EmotionPageView.swift in Sources */,
 				E6D68B132DB7DB5D003442A4 /* TagsHome.swift in Sources */,
 				E6AAEF9F2DB90B4A00911337 /* EntradasJournal.swift in Sources */,
+				24AACDB32DC8F12C00F2EA02 /* GalleryView.swift in Sources */,
 				E6EA488F2DB7D4A400C77477 /* JournalHome.swift in Sources */,
 				6C3C762E2DBBC13C00F010B8 /* AdicionarModal.swift in Sources */,
 				6C126ED02DBA609C00FCB0A0 /* PerfilHome.swift in Sources */,

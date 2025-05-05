@@ -43,7 +43,7 @@ struct JournalHome: View {
                             .font(.system(size: 20, weight : .bold))
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("Outside of media consumptions, do you have a hobby?")
+                        Text("Outside of media consumption, do you have a hobby?")
                             .font(.system(size: 18, weight: .regular))
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity, alignment: .leading)
