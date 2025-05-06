@@ -149,7 +149,8 @@ struct EmotionsView: View {
                             Image(systemName: "magnifyingglass")
                         }
 
-                        NavigationLink(destination: PerfilHome(), label: {Image(systemName: "person.circle")})
+                        NavigationLink(destination: GalleryView(), label: {
+                            Image(systemName: "person.crop.circle")})
                     }
                 }
             }

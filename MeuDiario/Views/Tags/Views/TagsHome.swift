@@ -7,6 +7,7 @@ struct TagsHome: View {
     @State private var selectedTag: TagsBasicas?
     @State private var searchText: String = ""
     @State private var showingAddSheet = false
+    @State private var galleryIsShowing = false
 
     var filteredTags: [TagsBasicas] {
         if searchText.isEmpty {
@@ -36,7 +37,7 @@ struct TagsHome: View {
                     }) {
                         Image(systemName: "plus")
                     }
-                    NavigationLink(destination: PerfilHome(), label: {
+                    NavigationLink(destination: GalleryView(), label: {
                         Image(systemName: "person.crop.circle")
                     })
                 }

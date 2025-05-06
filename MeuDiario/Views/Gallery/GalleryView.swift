@@ -1,14 +1,10 @@
 import SwiftUI
 
 struct GalleryView: View {
+//
+//    @Binding var galleryIsShowing: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct GalleryView_Previews: PreviewProvider {
-    static var previews: some View {
-
         NavigationView{
             Form {
                 VStack(alignment: .center, spacing: 10) {
@@ -105,20 +101,26 @@ struct GalleryView_Previews: PreviewProvider {
                 }
             }
             .navigationTitle("User's Gallery")
-            .toolbar {
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    Button {
-                        print("voltar")
-                    } label: {
-                        Image(systemName: "chevron.left")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                        Text("Back")
-                            .font(.title2)
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItemGroup(placement: .navigationBarLeading) {
+//                    Button {
+//                        galleryIsShowing = false
+//                    } label: {
+//                        Image(systemName: "chevron.left")
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width: 20, height: 20)
+//                        Text("Back")
+//                            .font(.title2)
+//                    }
+//                }
+//            }
         }
+    }
+}
+
+struct GalleryView_Previews: PreviewProvider {
+    static var previews: some View {
+        GalleryView()
     }
 }

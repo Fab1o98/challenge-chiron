@@ -146,11 +146,9 @@ struct JournalHome: View {
                         EntradasJournal()
                     }
                     
-                    Button(action: {
-                        print("Perfil")
-                    }) {
+                    NavigationLink(destination: GalleryView(), label: {
                         Image(systemName: "person.crop.circle")
-                    }
+                    })
                 }
             }
             .id(needsRefresh)
