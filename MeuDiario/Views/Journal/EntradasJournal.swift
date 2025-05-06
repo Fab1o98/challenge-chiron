@@ -19,6 +19,8 @@ struct EntradasJournal: View {
     @State var texto = ""
     @State var horario = Date()
     @State private var emocao: Emocao?
+    @State private var showingAddSheet = false
+    @State private var userTags: [TagsBasicas] = TagStorage.load()
     
     let colunas = Array(repeating: GridItem(.flexible(), spacing: 1), count: 4)
     
@@ -114,18 +116,30 @@ struct EntradasJournal: View {
                     
                     HStack{
                         LazyVGrid(columns: colunas, spacing: 0){
-                            ForEach(tags.tags, id: \.self){ tag in
-                                Text("\(tag)")
-                                    .font(.system(size: 15))
-                                    .padding()
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.gray.opacity(1), lineWidth: 1)
-                                            .frame(width: 75, height: 38)
-                                            .background(Color.gray.opacity(0.2))
-                                            .cornerRadius(10)
-                                    )
+                            ForEach(userTags, id: \.id){ tag in
+                                Button(action: {
+                                    
+                                }) {
+                                    Text(tag.nome)
+                                        .font(.system(size: 15))
+                                        .padding()
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.gray.opacity(1), lineWidth: 1)
+                                                .frame(width: 75, height: 38)
+                                                .background(Color.gray.opacity(0.2))
+                                                .cornerRadius(10)
+                                        )
+                                }
                             }
+                            Button(action: {
+                                showingAddSheet = true
+                            }) {
+                                Image(systemName: "plus.circle")
+                            }
+                            .frame(width: 70, height: 20, alignment: .leading)
+                            .font(.system(size: 20))
+                            .foregroundColor(.black)
                         }
                         .frame(width: 360)
                     }
@@ -142,7 +156,7 @@ struct EntradasJournal: View {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Done") {
                             emocaoManager.salvarEmocaoJSON(
-                                emocao: emocao?.nome ?? "Books",
+                                emocao: emocao?.nome ?? "Joy",
                                     comentario: texto,
                                     horario: horario,
                                     intensidade: Int(intensidade)
@@ -150,6 +164,9 @@ struct EntradasJournal: View {
                             dismiss()
                         }
                     }
+                }
+                .sheet(isPresented: $showingAddSheet) {
+                    AdicionarTags(tags: $userTags)
                 }
             }
         }

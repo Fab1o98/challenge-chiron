@@ -1,6 +1,7 @@
 import SwiftUI
 
-struct TabBar: View {    
+struct TabBar: View {
+    
     var body: some View {
         TabView {
             TagsHome()

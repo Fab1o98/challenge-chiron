@@ -8,11 +8,17 @@
 import Foundation
 
 class TagViewModel : ObservableObject{
-    @Published var tags = ["Books", "College", "Dating", "Family", "Frineds", "Health", "Identity", "Money", "Movies", "Travel", "Work"]
-    
-    func adicionarTag(_ tagDigitada : String) {
-        let trimmed = tagDigitada.trimmingCharacters(in : .whitespaces)
-        guard !trimmed.isEmpty, !tags.contains(trimmed) else {return}
-        tags.append(trimmed)
-    }
+    @Published var tags: [TagsBasicas] = []
+
+        init() {
+            carregarTags()
+        }
+
+        func carregarTags() {
+            self.tags = TagStorage.load()
+        }
+
+        func salvarTags() {
+            TagStorage.save(tags)
+        }
 }

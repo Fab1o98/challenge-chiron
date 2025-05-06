@@ -13,8 +13,6 @@ struct Emocao: Identifiable, Codable, Hashable{
     var nome: String
     var descricao: String
     var intensidade: Int
-
-    
     
    
     

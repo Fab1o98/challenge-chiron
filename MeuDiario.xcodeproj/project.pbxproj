@@ -171,7 +171,6 @@
 			children = (
 				E69C191D2DBBAD1300E5E7B3 /* DataFormatada.swift */,
 				E69C191F2DBBAD2F00E5E7B3 /* HorarioFormatado.swift */,
-				E69C19212DBBAD4B00E5E7B3 /* NewTag.swift */,
 				6C3C762D2DBBC13C00F010B8 /* AdicionarModal.swift */,
 				E69C19272DBBC36000E5E7B3 /* SalvarEmocao.swift */,
 				E62004462DC0FCB80033C888 /* NewTag.swift */,
@@ -205,6 +204,7 @@
 		E6EA48892DB7D20E00C77477 /* Emocoes */ = {
 			isa = PBXGroup;
 			children = (
+				E6EAA7452DCA3D00000E8F30 /* ModelData */,
 				E6D68B142DB7DBF3003442A4 /* EmotionsView.swift */,
 				E705103E2DC0EF2500257A51 /* EmotionPageView.swift */,
 			);
@@ -229,6 +229,13 @@
 				E653265B2DA8007000380B93 /* Emocao.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		E6EAA7452DCA3D00000E8F30 /* ModelData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

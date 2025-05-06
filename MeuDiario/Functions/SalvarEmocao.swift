@@ -46,7 +46,7 @@ class EmocaoManager: ObservableObject {
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        
+    
         do {
             let dados = try Data(contentsOf: url)
             registros = try decoder.decode([RegistrarEmocao].self, from: dados)

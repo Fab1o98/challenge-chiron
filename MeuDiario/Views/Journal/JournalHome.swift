@@ -11,7 +11,8 @@ struct JournalHome: View {
     
     @State private var mostrarFormulario = false
     @State private var needsRefresh = false
-        
+//    @Binding var corEmocao: TagsBasicas
+    
     @ObservedObject var tags = TagViewModel()
     @EnvironmentObject var diarioViewModel: DiarioViewModel
     @StateObject private var emocaoManager = EmocaoManager()
@@ -61,53 +62,37 @@ struct JournalHome: View {
                                 HStack{
                                     VStack(alignment: .leading, spacing: 6){
                                         Text(registro.emocao)
-                                            .font(Font.custom("SF Pro", size: 17))
+                                            .font(Font.custom("SF Pro", size: 20))
                                             .foregroundColor(.black)
                                         
                                         Text(registro.comentario)
-                                            .font(Font.custom("SF Pro", size: 15))
+                                            .font(Font.custom("SF Pro", size: 18))
                                             .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
                                         
                                         Text(dataFormatada(registro.horario))
-                                            .font(Font.custom("SF Pro", size: 15))
+                                            .font(Font.custom("SF Pro", size: 18))
                                             .foregroundColor(Color(red: 0.24, green: 0.24, blue: 0.26).opacity(0.6))
                                     }
-                                    .frame(width: 150, alignment: .leading)
+                                    .frame(width: 140, alignment: .leading)
                                     
                                     Spacer()
                                     
                                     HStack{
                                         Text("\(registro.intensidade)")
-                                            .font(Font.custom("SF Pro", size: 25)
+                                            .font(Font.custom("SF Pro", size: 28)
                                                     .weight(.semibold)
                                             )
                                         
                                         Text("Intensidade")
-                                            .font(Font.custom("Sf Pro", size: 15)
+                                            .font(Font.custom("Sf Pro", size: 18)
                                                     .weight(.semibold)
                                             )
                                     }
-                                    
-                                    //Spacer()
-                                    
-                                    /*ZStack {
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .fill(LinearGradient(
-                                                gradient: Gradient(colors: [.red, .orange]),
-                                                startPoint: .leading,
-                                                endPoint: .trailing
-                                            ))
-
-                                        Text("Intensidade: \(registro.intensidade)")
-                                            .font(Font.custom("SF Pro", size: 15))
-                                            .foregroundColor(.white)
-                                    }
-                                    .frame(width: 150, height: 70)*/
                                 }
-                                .frame(width: 310, height: 70)
+                                .frame(width: 310, height: 87)
                                 .background(
                                     LinearGradient(
-                                        gradient: Gradient(colors: [.white, .orange]),
+                                        gradient: Gradient(colors: [.white, Color(registro.emocao)]),
                                         startPoint: UnitPoint(x: 0.60, y: 0),
                                         endPoint: UnitPoint(x: 1, y: 0)
                                     )
