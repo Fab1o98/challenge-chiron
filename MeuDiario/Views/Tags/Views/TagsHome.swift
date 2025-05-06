@@ -37,7 +37,7 @@ struct TagsHome: View {
                         Image(systemName: "plus")
                     }
                     NavigationLink(destination: PerfilHome(), label: {
-                        Image(systemName: "person.circle")
+                        Image(systemName: "person.crop.circle")
                     })
                 }
             }

@@ -8,6 +8,7 @@ struct GalleryView: View {
 
 struct GalleryView_Previews: PreviewProvider {
     static var previews: some View {
+
         NavigationView{
             Form {
                 VStack(alignment: .center, spacing: 10) {
