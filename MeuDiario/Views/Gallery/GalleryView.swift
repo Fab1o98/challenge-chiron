@@ -6,99 +6,78 @@ struct GalleryView: View {
     
     var body: some View {
         NavigationView{
-            Form {
-                VStack(alignment: .center, spacing: 10) {
-                    Text("Weekly View")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                    Rectangle()
-                        .frame(width: 140, height: 280)
-                        .foregroundColor(.blue)
-                }
-                .padding(10)
-                .frame(maxWidth: .infinity)
+            VStack {
+                Divider().foregroundColor(.black)
                 
-                Section(header: Text("Reflections")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.black))
-                        {
-                            ScrollView(.horizontal) {
-                                HStack(spacing: 14) {
-                                    Button{
-                                        print("teste")
-                                    } label: {
-                                        Text("Hobbies")
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                            .padding(10)
-                                            .overlay(RoundedRectangle(cornerRadius: 6)
-                                                        .stroke(Color.blue, lineWidth: 2))
-                                    }
-                                    Button{
-                                        print("teste")
-                                    } label: {
-                                        Text("Hobbies")
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                            .padding(10)
-                                            .overlay(RoundedRectangle(cornerRadius: 6)
-                                                        .stroke(Color.blue, lineWidth: 2))
-                                    }
-                                    Button{
-                                        print("teste")
-                                    } label: {
-                                        Text("Hobbies")
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                            .padding(10)
-                                            .overlay(RoundedRectangle(cornerRadius: 6)
-                                                        .stroke(Color.blue, lineWidth: 2))
-                                    }
-                                    Button{
-                                        print("teste")
-                                    } label: {
-                                        Text("Hobbies")
-                                            .font(.title3)
-                                            .fontWeight(.semibold)
-                                            .padding(10)
-                                            .overlay(RoundedRectangle(cornerRadius: 6)
-                                                        .stroke(Color.blue, lineWidth: 2))
+                ScrollView {
+                    VStack(alignment: .center, spacing: 10) {
+                        Text("Weekly View")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        Rectangle()
+                            .frame(width: 140, height: 280)
+                            .foregroundColor(.blue)
+                    }
+                    .padding(10)
+                    
+                    Section(header: Text("Next canvas")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.black))
+                            {
+                                Button {
+                                    print("Next canvas")
+                                } label: {
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        HStack {
+                                            Text("Ready")
+                                                .font(.body)
+                                                .fontWeight(.regular)
+                                                .foregroundColor(.gray)
+                                            Spacer()
+                                            Circle()
+                                                .frame(width: 15, height: 15)
+                                                .foregroundColor(.red)
+                                        }
+                                        Text("Paint")
                                     }
                                 }
-                                .padding(10)
+                                .frame(width: 300, height: 40)
+                                .padding()
+                                .background(RoundedRectangle(cornerRadius: 5).stroke(.blue, lineWidth: 2).shadow(radius: 4))
                             }
-                }
-                
-                Section(header: Text("Collection")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.black))
-                {
-                    ScrollView(.horizontal) {
-                        HStack(spacing: 14) {
-                            Rectangle()
-                                .frame(width: 84, height: 168)
-                                .foregroundColor(.red)
-                            Rectangle()
-                                .frame(width: 84, height: 168)
-                                .foregroundColor(.red)
-                            Rectangle()
-                                .frame(width: 84, height: 168)
-                                .foregroundColor(.red)
-                            Rectangle()
-                                .frame(width: 84, height: 168)
-                                .foregroundColor(.red)
-                            Rectangle()
-                                .frame(width: 84, height: 168)
-                                .foregroundColor(.red)
-                            Rectangle()
-                                .frame(width: 84, height: 168)
-                                .foregroundColor(.red)
+                    
+                    Section(header: Text("Collection")
+                                .font(.title2)
+                                .fontWeight(.bold)
+                                .foregroundColor(.black))
+                    {
+                        ScrollView(.horizontal) {
+                            HStack(spacing: 14) {
+                                Rectangle()
+                                    .frame(width: 84, height: 168)
+                                    .foregroundColor(.red)
+                                Rectangle()
+                                    .frame(width: 84, height: 168)
+                                    .foregroundColor(.red)
+                                Rectangle()
+                                    .frame(width: 84, height: 168)
+                                    .foregroundColor(.red)
+                                Rectangle()
+                                    .frame(width: 84, height: 168)
+                                    .foregroundColor(.red)
+                                Rectangle()
+                                    .frame(width: 84, height: 168)
+                                    .foregroundColor(.red)
+                                Rectangle()
+                                    .frame(width: 84, height: 168)
+                                    .foregroundColor(.red)
+                            }
+                            .padding(10)
                         }
-                        .padding(10)
                     }
                 }
+                .padding(20)
             }
             .navigationTitle("User's Gallery")
 //            .toolbar {
