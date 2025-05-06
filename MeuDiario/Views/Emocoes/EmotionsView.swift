@@ -98,8 +98,8 @@ struct EmotionsView: View {
         EmotionData(id: UUID(), imageName:"shameimg", emotion: "Shame", emotionColor: Color("Shame"), description: "Susanna and the Elders, Artemisia Gentileschi, \n1622"),
         EmotionData(id: UUID(), imageName:"angerimg", emotion: "Anger", emotionColor: Color("Anger"), description: "Dog Woman, Paula Rego, \n1994"),
         EmotionData(id: UUID(), imageName:"reliefimg", emotion: "Relief", emotionColor: Color("Relief"), description: "Louise Tiffany, Reading; Louis C. Tiffany, \n1888"),
-        EmotionData(id: UUID(), imageName:"hopeimg", emotion: "Hope", emotionColor: Color("Hope"), description: "Tree of Hope, Remain Strong; Frida Kahlo, \n1946")
-        //EmotionData(imageName:"hopeimg", emotion: "Satisfaction", emotionColor: Color("Satisfaction"), description: "Tree of Hope, Remain Strong; Frida Kahlo, \n1946")
+        EmotionData(id: UUID(), imageName:"hopeimg", emotion: "Hope", emotionColor: Color("Hope"), description: "Tree of Hope, Remain Strong; Frida Kahlo, \n1946"),
+        EmotionData(id: UUID(), imageName:"anxietyimg", emotion: "Anxiety", emotionColor: Color("Anxiety"), description: "The Persistence of Memory, Salvador Dalí, \n1931")
     ]
     
   //  @State private var navigateToEmotionDetails: Bool = false
