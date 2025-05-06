@@ -5,81 +5,85 @@ struct GalleryView: View {
 //    @Binding var galleryIsShowing: Bool
     
     var body: some View {
-        NavigationView{
-            VStack {
-                Divider().foregroundColor(.black)
+        VStack {
+            Divider().foregroundColor(.black)
+            
+            ScrollView {
+                VStack(alignment: .center, spacing: 10) {
+                    Text("Weekly View")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                    Rectangle()
+                        .frame(width: 140, height: 280)
+                        .foregroundColor(.blue)
+                }
+                .padding(10)
+                .padding(.bottom, 40)
                 
-                ScrollView {
-                    VStack(alignment: .center, spacing: 10) {
-                        Text("Weekly View")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                        Rectangle()
-                            .frame(width: 140, height: 280)
-                            .foregroundColor(.blue)
-                    }
-                    .padding(10)
-                    
-                    Section(header: Text("Next canvas")
+                
+                Section(header:
+                            VStack(alignment: .leading) {
+                                Text("Next canvas")
                                 .font(.title2)
                                 .fontWeight(.bold)
-                                .foregroundColor(.black))
-                            {
-                                Button {
-                                    print("Next canvas")
-                                } label: {
-                                    VStack(alignment: .leading, spacing: 5) {
-                                        HStack {
-                                            Text("Ready")
-                                                .font(.body)
-                                                .fontWeight(.regular)
-                                                .foregroundColor(.gray)
-                                            Spacer()
-                                            Circle()
-                                                .frame(width: 15, height: 15)
-                                                .foregroundColor(.red)
-                                        }
-                                        Text("Paint")
+                                .foregroundColor(.black)
+                })
+                        {
+                            Button {
+                                print("Next canvas")
+                            } label: {
+                                VStack(alignment: .leading, spacing: 5) {
+                                    HStack {
+                                        Text("Ready")
+                                            .font(.body)
+                                            .fontWeight(.regular)
+                                            .foregroundColor(.gray)
+                                        Spacer()
+                                        Circle()
+                                            .frame(width: 15, height: 15)
+                                            .foregroundColor(.red)
                                     }
+                                    Text("Paint")
                                 }
-                                .frame(width: 300, height: 40)
-                                .padding()
-                                .background(RoundedRectangle(cornerRadius: 5).stroke(.blue, lineWidth: 2).shadow(radius: 4))
                             }
-                    
-                    Section(header: Text("Collection")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.black))
-                    {
-                        ScrollView(.horizontal) {
-                            HStack(spacing: 14) {
-                                Rectangle()
-                                    .frame(width: 84, height: 168)
-                                    .foregroundColor(.red)
-                                Rectangle()
-                                    .frame(width: 84, height: 168)
-                                    .foregroundColor(.red)
-                                Rectangle()
-                                    .frame(width: 84, height: 168)
-                                    .foregroundColor(.red)
-                                Rectangle()
-                                    .frame(width: 84, height: 168)
-                                    .foregroundColor(.red)
-                                Rectangle()
-                                    .frame(width: 84, height: 168)
-                                    .foregroundColor(.red)
-                                Rectangle()
-                                    .frame(width: 84, height: 168)
-                                    .foregroundColor(.red)
-                            }
-                            .padding(10)
+                            .frame(width: 300, height: 40)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 5).stroke(.blue, lineWidth: 2).shadow(radius: 4))
+                            .padding(.bottom, 40)
                         }
+                
+                Section(header: Text("Collection")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black))
+                {
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 14) {
+                            Rectangle()
+                                .frame(width: 84, height: 168)
+                                .foregroundColor(.red)
+                            Rectangle()
+                                .frame(width: 84, height: 168)
+                                .foregroundColor(.red)
+                            Rectangle()
+                                .frame(width: 84, height: 168)
+                                .foregroundColor(.red)
+                            Rectangle()
+                                .frame(width: 84, height: 168)
+                                .foregroundColor(.red)
+                            Rectangle()
+                                .frame(width: 84, height: 168)
+                                .foregroundColor(.red)
+                            Rectangle()
+                                .frame(width: 84, height: 168)
+                                .foregroundColor(.red)
+                        }
+                        .padding(10)
                     }
                 }
-                .padding(20)
             }
-            .navigationTitle("User's Gallery")
+        }
+        .navigationBarTitle("User's Gallery")
 //            .toolbar {
 //                ToolbarItemGroup(placement: .navigationBarLeading) {
 //                    Button {
@@ -94,7 +98,6 @@ struct GalleryView: View {
 //                    }
 //                }
 //            }
-        }
     }
 }
 
