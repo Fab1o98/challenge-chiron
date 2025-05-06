@@ -66,6 +66,6 @@ struct EmotionPageView: View {
 
 //struct EmotionPageView_Previews: PreviewProvider {
 // static var previews: some View {
-//     EmotionPageView()
+//     EmotionPageView(emotionreceive: )
 //    }
 // }

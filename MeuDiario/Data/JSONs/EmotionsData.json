@@ -98,5 +98,14 @@
         "Descrição": "Hope is an optimistic state of mind that is based on an expectation of positive outcomes with respect to events and circumstances in one's own life, or the world at large.",
         "NomeObra": "hopeimg",
         "TextoObra": "Tree of Hope, Remain Strong; Frida Kahlo, 1946"
+    },
+    
+    {
+        "Nome": "Anxiety",
+        "Id":"011",
+        "Cabeçalho":"Anxiety was born in the very same moment as mankind. And since we will never be able to master it, we will have to learn to live with it—just as we have learned to live with storms.",
+        "AutorCabeçalho":"- Paulo Coelho",
+        "Descrição": "Anxiety is an emotion characterised by an unpleasant state of inner turmoil and includes feelings of dread over anticipated events.",
+        "NomeObra": "anxietyimg",
+        "TextoObra": "The Persistence of Memory, Salvador Dalí,  1931"
     }]
-
