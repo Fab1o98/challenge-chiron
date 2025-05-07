@@ -58,7 +58,7 @@ struct EntradasJournal: View {
                             .frame(width: 80, height: 40, alignment: .leading)
                             .padding(.vertical, 20)
                         
-                        Picker("Selecione a emoção", selection: $emocao){
+                        Picker("Select an emotion", selection: $emocao){
                             ForEach(emocaoList.emocoes, id: \.self){ emocao in
                                 Text(emocao.nome).tag(emocao as Emocao?)
                             }
@@ -74,11 +74,11 @@ struct EntradasJournal: View {
                         .padding(.vertical, 20)
                     
                     ZStack{
-                        Slider(value: $intensidade, in: 0...5, step: 1)
+                        Slider(value: $intensidade, in: 1...5, step: 1)
                             .padding(.vertical, -15)
                             .frame(width: 300, alignment: .leading)
                         HStack {
-                            Text("0")
+                            Text("1")
                                 .font(.system(size: 20))
                                 .fontWeight(.bold)
                             
