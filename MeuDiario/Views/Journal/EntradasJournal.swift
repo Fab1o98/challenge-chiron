@@ -14,7 +14,7 @@ struct EntradasJournal: View {
     
     @ObservedObject var tags = TagViewModel()
     @StateObject private var emocaoManager = EmocaoManager()
-    @State var selectedTag = "Felicidade"
+    @State var selectedTag = "Pride"
     @State var intensidade: Double = 2.5
     @State var texto = ""
     @State var horario = Date()
@@ -37,7 +37,7 @@ struct EntradasJournal: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
 
                             DatePicker(
-                                "Horário",
+                                "Time",
                                 selection: $horario,
                                 displayedComponents: .hourAndMinute
                             )
