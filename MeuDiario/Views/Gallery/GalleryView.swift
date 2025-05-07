@@ -44,6 +44,9 @@ struct GalleryView: View {
                                             .foregroundColor(.red)
                                     }
                                     Text("Paint")
+                                        .font(.body)
+                                        .fontWeight(.regular)
+                                        .foregroundColor(.black)
                                 }
                             }
                             .frame(width: 300, height: 40)

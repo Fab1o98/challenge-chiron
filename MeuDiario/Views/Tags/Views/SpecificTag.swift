@@ -28,7 +28,6 @@ struct SpecificTag: View {
                     Section(header: Text("Entries")
                                 .font(.title2)
                                 .fontWeight(.semibold)) {
-                        
                     }
                     Spacer()
                 }
