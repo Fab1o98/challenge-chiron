@@ -9,7 +9,10 @@ import SwiftUI
 
 struct PerfilHome: View {
     var body: some View {
-        Text("Perfil")
+        VStack{
+            Text("Perfil")
+            MosaicoView()
+        }
     }
 }
 

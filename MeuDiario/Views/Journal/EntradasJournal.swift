@@ -14,11 +14,13 @@ struct EntradasJournal: View {
     
     @ObservedObject var tags = TagViewModel()
     @StateObject private var emocaoManager = EmocaoManager()
-    @State var selectedTag = "Felicidade"
+    @State var selectedTag = "Pride"
     @State var intensidade: Double = 2.5
     @State var texto = ""
     @State var horario = Date()
     @State private var emocao: Emocao?
+    @State private var showingAddSheet = false
+    @State private var userTags: [TagsBasicas] = TagStorage.load()
     
     let colunas = Array(repeating: GridItem(.flexible(), spacing: 1), count: 4)
     
@@ -37,7 +39,7 @@ struct EntradasJournal: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
 
                             DatePicker(
-                                "Horário",
+                                "Time",
                                 selection: $horario,
                                 displayedComponents: .hourAndMinute
                             )
@@ -58,7 +60,7 @@ struct EntradasJournal: View {
                             .frame(width: 80, height: 40, alignment: .leading)
                             .padding(.vertical, 20)
                         
-                        Picker("Selecione a emoção", selection: $emocao){
+                        Picker("Select an emotion", selection: $emocao){
                             ForEach(emocaoList.emocoes, id: \.self){ emocao in
                                 Text(emocao.nome).tag(emocao as Emocao?)
                             }
@@ -74,11 +76,11 @@ struct EntradasJournal: View {
                         .padding(.vertical, 20)
                     
                     ZStack{
-                        Slider(value: $intensidade, in: 0...5, step: 1)
+                        Slider(value: $intensidade, in: 1...5, step: 1)
                             .padding(.vertical, -15)
                             .frame(width: 300, alignment: .leading)
                         HStack {
-                            Text("0")
+                            Text("1")
                                 .font(.system(size: 20))
                                 .fontWeight(.bold)
                             
@@ -114,18 +116,30 @@ struct EntradasJournal: View {
                     
                     HStack{
                         LazyVGrid(columns: colunas, spacing: 0){
-                            ForEach(tags.tags, id: \.self){ tag in
-                                Text("\(tag)")
-                                    .font(.system(size: 15))
-                                    .padding()
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.gray.opacity(1), lineWidth: 1)
-                                            .frame(width: 75, height: 38)
-                                            .background(Color.gray.opacity(0.2))
-                                            .cornerRadius(10)
-                                    )
+                            ForEach(userTags, id: \.id){ tag in
+                                Button(action: {
+                                    selectedTag = tag.nome
+                                }) {
+                                    Text(tag.nome)
+                                        .font(.system(size: 15))
+                                        .padding()
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(selectedTag == tag.nome ? Color.blue : Color.gray.opacity(0.2))
+                                                .frame(width: 75, height: 38)
+                                                .background(Color.gray.opacity(0.2))
+                                                .cornerRadius(10)
+                                        )
+                                }
                             }
+                            Button(action: {
+                                showingAddSheet = true
+                            }) {
+                                Image(systemName: "plus.circle")
+                            }
+                            .frame(width: 70, height: 20, alignment: .leading)
+                            .font(.system(size: 20))
+                            .foregroundColor(.black)
                         }
                         .frame(width: 360)
                     }
@@ -139,10 +153,15 @@ struct EntradasJournal: View {
                             dismiss()
                         }
                     }
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .navigationBarTrailing){
                         Button("Done") {
+                            if let index = userTags.firstIndex(where: {$0.nome == selectedTag}) {
+                                userTags[index].qtd += 1
+                                TagStorage.save(userTags)
+                            }
+                            
                             emocaoManager.salvarEmocaoJSON(
-                                emocao: emocao?.nome ?? "Books",
+                                emocao: emocao?.nome ?? "Joy",
                                     comentario: texto,
                                     horario: horario,
                                     intensidade: Int(intensidade)
@@ -151,14 +170,11 @@ struct EntradasJournal: View {
                         }
                     }
                 }
+                .sheet(isPresented: $showingAddSheet) {
+                    AdicionarTags(tags: $userTags)
+                }
             }
         }
     }
 }
 
-struct EntradasJournal_Previews: PreviewProvider {
-    static var previews: some View {
-        EntradasJournal()
-            .environmentObject(DiarioViewModel())
-    }
-}

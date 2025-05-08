@@ -1,21 +1,23 @@
 import Foundation
 
 class EmocaoManager: ObservableObject {
-        
+    
     struct RegistrarEmocao: Codable {
+        let id = UUID()
         let emocao: String
         let comentario: String
         let horario: Date
         let intensidade: Int
     }
     
-    private var registros: [RegistrarEmocao] = []
+    @Published var registros: [RegistrarEmocao] = []
     
     private var arquivoURL: URL? {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("registro_emocoes.json")
     }
     
     init() {
+        prepararArquivoSeNecessario()
         carregarRegistros()
     }
     
@@ -46,29 +48,56 @@ class EmocaoManager: ObservableObject {
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        
+    
         do {
             let dados = try Data(contentsOf: url)
             registros = try decoder.decode([RegistrarEmocao].self, from: dados)
         } catch {
-            print("Nenhum registro anterior encontrado ou erro ao carregar: \(error)")
+            print("Erro ao carregar os registros existentes: \(error)")
             registros = []
         }
     }
     
-    func listarRegistros() -> [RegistrarEmocao]{
-        guard let url = arquivoURL else { return []}
-        
+    func listarRegistros() -> [RegistrarEmocao] {
+        guard let url = arquivoURL else { return [] }
+
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-            
-        do{
+
+        do {
             let dadosJSON = try Data(contentsOf: url)
             let registros = try decoder.decode([RegistrarEmocao].self, from: dadosJSON)
             return registros
-        } catch{
+        } catch {
             print("Erro ao carregar os registros: \(error)")
             return []
         }
     }
+
+    /// Garante que o arquivo JSON exista no primeiro uso
+    private func prepararArquivoSeNecessario() {
+        guard let url = arquivoURL else { return }
+
+        if !FileManager.default.fileExists(atPath: url.path) {
+            let vazio: [RegistrarEmocao] = []
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .iso8601
+            do {
+                let data = try encoder.encode(vazio)
+                try data.write(to: url)
+                print("Arquivo de registros criado em: \(url)")
+            } catch {
+                print("Erro ao criar arquivo vazio: \(error)")
+            }
+        }
+    }
+    
+    func deletarRegistro(registro: RegistrarEmocao){
+        if let index = registros.firstIndex(where: {$0.id == registro.id}) {
+          registros.remove(at: index)
+          salvarRegistros()
+        } else{
+            print("Registro com ID \(registro.id) não encontrado para deletar.")
+        }
+      }
 }

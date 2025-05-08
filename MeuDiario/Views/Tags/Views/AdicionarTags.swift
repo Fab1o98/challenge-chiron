@@ -6,7 +6,8 @@ struct AdicionarTags: View {
     @Binding var tags: [TagsBasicas]
     @State private var nome: String = ""
     @State private var nomecor: String = "NadaAtribuido"
-
+    @State private var opcoes = ["Hope", "Joy", "Anger", "Sadness", "Surprise", "Shame", "Guilt", "Fear", "Pride"]
+    
     var body: some View {
         NavigationView {
             Form {
@@ -16,8 +17,9 @@ struct AdicionarTags: View {
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Salvar") {
+                        let corAleatoria = opcoes.randomElement() ?? "NadaAtribuido"
                         let newId = (tags.last?.id ?? 0) + 1
-                            let nova = TagsBasicas(id: newId, nome: nome, qtd: 0, nomecor: nomecor)
+                        let nova = TagsBasicas(id: newId, nome: nome, qtd: 0, nomecor: corAleatoria)
                             tags.append(nova)
                             TagStorage.save(tags) // ✅ salva no disco
                             dismiss()
