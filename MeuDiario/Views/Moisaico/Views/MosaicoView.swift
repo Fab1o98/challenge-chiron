@@ -40,7 +40,7 @@ struct MosaicoView: View {
             Spacer()
 
             // Botão para iniciar o preenchimento automático
-            Button("Iniciar preenchimento") {
+            Button("Paint!") {
                 autoFillGrid()
             }
             .padding(20)
