@@ -14,7 +14,7 @@ struct EntradasJournal: View {
     
     @ObservedObject var tags = TagViewModel()
     @StateObject private var emocaoManager = EmocaoManager()
-    @State var selectedTag = "Felicidade"
+    @State var selectedTag = "Pride"
     @State var intensidade: Double = 2.5
     @State var texto = ""
     @State var horario = Date()
@@ -39,7 +39,7 @@ struct EntradasJournal: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
 
                             DatePicker(
-                                "Horário",
+                                "Time",
                                 selection: $horario,
                                 displayedComponents: .hourAndMinute
                             )
@@ -60,7 +60,7 @@ struct EntradasJournal: View {
                             .frame(width: 80, height: 40, alignment: .leading)
                             .padding(.vertical, 20)
                         
-                        Picker("Selecione a emoção", selection: $emocao){
+                        Picker("Select an emotion", selection: $emocao){
                             ForEach(emocaoList.emocoes, id: \.self){ emocao in
                                 Text(emocao.nome).tag(emocao as Emocao?)
                             }
@@ -76,7 +76,7 @@ struct EntradasJournal: View {
                         .padding(.vertical, 20)
                     
                     ZStack{
-                        Slider(value: $intensidade, in: 0...5, step: 1)
+                        Slider(value: $intensidade, in: 1...5, step: 1)
                             .padding(.vertical, -15)
                             .frame(width: 300, alignment: .leading)
                         HStack {
