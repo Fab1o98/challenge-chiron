@@ -3,13 +3,14 @@ import Foundation
 class EmocaoManager: ObservableObject {
     
     struct RegistrarEmocao: Codable {
+        let id = UUID()
         let emocao: String
         let comentario: String
         let horario: Date
         let intensidade: Int
     }
     
-    private var registros: [RegistrarEmocao] = []
+    @Published var registros: [RegistrarEmocao] = []
     
     private var arquivoURL: URL? {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("registro_emocoes.json")
@@ -47,7 +48,7 @@ class EmocaoManager: ObservableObject {
         
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
-        
+    
         do {
             let dados = try Data(contentsOf: url)
             registros = try decoder.decode([RegistrarEmocao].self, from: dados)

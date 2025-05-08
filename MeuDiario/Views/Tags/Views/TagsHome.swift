@@ -2,11 +2,13 @@
 import SwiftUI
 
 struct TagsHome: View {
+      
     @State private var tags: [TagsBasicas] = TagStorage.load()
     @State private var isEditing: Bool = false
     @State private var selectedTag: TagsBasicas?
     @State private var searchText: String = ""
     @State private var showingAddSheet = false
+    @State private var galleryIsShowing = false
 
     var filteredTags: [TagsBasicas] {
         if searchText.isEmpty {
@@ -25,6 +27,7 @@ struct TagsHome: View {
                         filteredTags: filteredTags,
                         fireEditing: $isEditing,
                         selectedTag: $selectedTag)
+                    .foregroundColor(.blue)
 
                 Spacer()
             }
@@ -35,9 +38,11 @@ struct TagsHome: View {
                         showingAddSheet = true
                     }) {
                         Image(systemName: "plus")
+                            .foregroundColor(.blue)
                     }
-                    NavigationLink(destination: PerfilHome(), label: {
-                        Image(systemName: "person.circle")
+                    NavigationLink(destination: GalleryView(), label: {
+                        Image(systemName: "person.crop.circle")
+                            .foregroundColor(.blue)
                     })
                 }
             }
@@ -51,6 +56,9 @@ struct TagsHome: View {
                 }
             }
             .searchable(text: $searchText)
+        }
+        .onAppear{
+            tags = TagStorage.load()
         }
     }
 }

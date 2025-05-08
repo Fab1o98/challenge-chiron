@@ -6,7 +6,7 @@ struct AdicionarTags: View {
     @Binding var tags: [TagsBasicas]
     @State private var nome: String = ""
     @State private var nomecor: String = "NadaAtribuido"
-
+    
     var body: some View {
         NavigationView {
             Form {

@@ -1,24 +1,33 @@
 // .
 import SwiftUI
 
-struct  EmotionData : Identifiable, Hashable {
-    let id:UUID
-    let imageName: String
-    let emotion: String
-    let emotionColor: Color
-    let description: String
+struct  EmotionData : Identifiable, Decodable, Hashable{
+    let nomeTitulo: String
+    let id: String
+    let cabecalho: String
+    let autorCabecalho: String
+    let descricao: String
+    
+    let nomeImagem: String
+    
+    let textoObra:String
+    let emotionColor: String
+
+    var emotionColorName: Color {
+        Color(emotionColor)
+    }
 }
+
 
 
 struct EmotionCard: View {
     
     var emocao: EmotionData
-  //  @Binding var navigationToEmotionPage: Bool // = false
     
     var body: some View {
         
         HStack(spacing: 0){
-            Image(emocao.imageName)
+            Image(emocao.nomeImagem)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 249, height: 187)
@@ -27,8 +36,8 @@ struct EmotionCard: View {
             VStack(alignment: .leading, spacing: 43){
                 ZStack{
                     Rectangle()
-                    
-                        .fill(emocao.emotionColor)
+
+                        .fill(emocao.emotionColorName)
                         .frame(height: 100)
                         .padding(.top, -15) // Move frame para cima
                     
@@ -36,9 +45,9 @@ struct EmotionCard: View {
                     
                     VStack(alignment: .trailing){
                         //Spacer()
-                        Text(emocao.emotion)
+                        Text(emocao.nomeTitulo)
                             .font(.title3)
-                            .font(.system(size: 18, weight: .medium, design: .default))
+                            .font(Font.custom("SF Pro", size: 20))
                             .foregroundColor(.black)
                             .bold()
                             .lineLimit(1)
@@ -53,16 +62,15 @@ struct EmotionCard: View {
                 
                 
                 VStack{
-                    Text(emocao.description) // Texto descrição.
-                        .font(.caption)
+                    Text(emocao.textoObra) // Texto descrição.
+                        .font(Font.custom("SF Pro", size: 11)
+                                .weight(.medium))
                         .frame(height: 65)
+                        .frame(maxWidth: .infinity, alignment: .topLeading)
                         .padding(.top, -25)
                         .foregroundColor(.black)
                         .padding(.horizontal, 10)
-//                    NavigationLink("",
-//                                   destination:EmotionPageView(emotionreceive: emocao),
-//                                   isActive: $navigationToEmotionPage)
-                    
+
                 }
                 
               
@@ -76,9 +84,7 @@ struct EmotionCard: View {
         .cornerRadius(15)
         .shadow(radius: 5)
         .padding(.horizontal)
-//        .onTapGesture {
-//            navigationToEmotionPage = true     
-//        }
+
         
     }
 }
@@ -87,56 +93,24 @@ struct EmotionCard: View {
 
 
 struct EmotionsView: View {
-    
-    static let listaEmocoes = [
-        EmotionData(id: UUID(), imageName:"matissejoy", emotion: "Joy", emotionColor: Color("Joy"), description: "Le Bonheur de Vivre, \nMatisse - 1906"),
-        EmotionData(id: UUID(), imageName:"pride", emotion: "Pride", emotionColor: Color("Pride"), description: "Hercules & the Nemean Lion, \nPeter Paul Rubens - ca 1615"),
-        EmotionData(id: UUID(), imageName:"surprise", emotion: "Surprise", emotionColor: Color("Surprise"), description: "Tiger in a Tropical Storm, \nH.Rousseau, 1891"),
-        EmotionData(id: UUID(), imageName:"guiltimg", emotion: "Guilt", emotionColor: Color("Guilt"), description: "The Guilt of Gold Teeth, \nBasquiat, 1982"),
-        EmotionData(id: UUID(), imageName:"envyimg", emotion: "Envy", emotionColor: Color("Envy"), description: "Jealousy, Edvard Munch, \n1913"),
-        EmotionData(id: UUID(), imageName:"sadnessimg", emotion: "Sadness", emotionColor: Color("Sadness"), description: "New York Movie, Edward Hopper, 1939"),
-        EmotionData(id: UUID(), imageName:"shameimg", emotion: "Shame", emotionColor: Color("Shame"), description: "Susanna and the Elders, Artemisia Gentileschi, \n1622"),
-        EmotionData(id: UUID(), imageName:"angerimg", emotion: "Anger", emotionColor: Color("Anger"), description: "Dog Woman, Paula Rego, \n1994"),
-        EmotionData(id: UUID(), imageName:"reliefimg", emotion: "Relief", emotionColor: Color("Relief"), description: "Louise Tiffany, Reading; Louis C. Tiffany, \n1888"),
-        EmotionData(id: UUID(), imageName:"hopeimg", emotion: "Hope", emotionColor: Color("Hope"), description: "Tree of Hope, Remain Strong; Frida Kahlo, \n1946")
-        //EmotionData(imageName:"hopeimg", emotion: "Satisfaction", emotionColor: Color("Satisfaction"), description: "Tree of Hope, Remain Strong; Frida Kahlo, \n1946")
-    ]
-    
-  //  @State private var navigateToEmotionDetails: Bool = false
-    
-    var body: some View {
-    
-        NavigationView {
-            ScrollView{
-                    ForEach(EmotionsView.listaEmocoes) { Emocao in
-                        
-                       //EmotionCard(emocao: Emocao)
-                        
-//                        NavigationLink(isActive: $navigateToEmotionDetails) {
-//                            EmotionPageView(emotionreceive: Emocao)
-//                        } label: {
-//                            EmotionCard(emocao: Emocao,
-//                                        navigationToEmotionPage: $navigateToEmotionDetails)
-//                        }
-
-                        
-                      //  NavigationLink(
-
-                        NavigationLink {
-                            EmotionPageView(emotionreceive: Emocao)
-                        } label: {
-                           EmotionCard(emocao: Emocao)
-                        }
-
-
-
-                        
-//                        NavigationLink {
-//                            EmotionPageView(emotionreceive: Emocao)
-//                        } label: {
-//                            EmotionCard(emocao: Emocao)
+    @ObservedObject var dtLoader = DataLoader()
 //
-//                        }
+//    init(){
+//        UINavigationBar.appearance().tintColor = .white
+//    } // Comando para mudar a cor do botão nativo da navigationView
+//
+    var body: some View {
+        
+        NavigationView {
+            
+            ScrollView{
+                ForEach(dtLoader.dtEmotion) { emocao in
+                    
+                    NavigationLink {
+                        EmotionPageView(emotionReceive:emocao)
+                        
+                    } label: {
+                        EmotionCard(emocao: emocao)
                     }
                 }
                 .navigationTitle("Emotions")
@@ -147,14 +121,19 @@ struct EmotionsView: View {
                             print("Buscar")
                         }) {
                             Image(systemName: "magnifyingglass")
+                                .foregroundColor(.blue)
                         }
 
-                        NavigationLink(destination: PerfilHome(), label: {Image(systemName: "person.circle")})
+                        NavigationLink(destination: GalleryView(), label: {
+                            Image(systemName: "person.crop.circle")
+                                .foregroundColor(.blue)
+                        })
                     }
                 }
             }
         }
     }
+}
 
 
 struct EmotionsView_Previews: PreviewProvider {
