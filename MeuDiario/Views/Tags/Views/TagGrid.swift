@@ -18,7 +18,7 @@ struct TagGrid: View {
                     Text("\(tag.qtd)")
                 }
                 .padding()
-                .background(tag.cor)
+                .background(Color(.systemGray5))
                 .cornerRadius(15)
                 .contextMenu {
                     Button() {

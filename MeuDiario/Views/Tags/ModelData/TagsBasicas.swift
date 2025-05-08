@@ -6,6 +6,4 @@ struct TagsBasicas: Identifiable, Codable, Hashable{
     var nome: String
     var qtd: Int
     var nomecor: String
-    
-    var cor: Color { Color(nomecor)}
 }
