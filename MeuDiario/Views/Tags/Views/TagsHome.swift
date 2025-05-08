@@ -2,6 +2,7 @@
 import SwiftUI
 
 struct TagsHome: View {
+      
     @State private var tags: [TagsBasicas] = TagStorage.load()
     @State private var isEditing: Bool = false
     @State private var selectedTag: TagsBasicas?
@@ -36,9 +37,11 @@ struct TagsHome: View {
                         showingAddSheet = true
                     }) {
                         Image(systemName: "plus")
+                            .foregroundColor(.blue)
                     }
                     NavigationLink(destination: GalleryView(), label: {
                         Image(systemName: "person.crop.circle")
+                            .foregroundColor(.blue)
                     })
                 }
             }

@@ -94,11 +94,11 @@ struct EmotionCard: View {
 
 struct EmotionsView: View {
     @ObservedObject var dtLoader = DataLoader()
-    
-    init(){
-        UINavigationBar.appearance().tintColor = .white
-    } // Comando para mudar a cor do botão nativo da navigationView
-    
+//
+//    init(){
+//        UINavigationBar.appearance().tintColor = .white
+//    } // Comando para mudar a cor do botão nativo da navigationView
+//
     var body: some View {
         
         NavigationView {
@@ -121,10 +121,13 @@ struct EmotionsView: View {
                             print("Buscar")
                         }) {
                             Image(systemName: "magnifyingglass")
+                                .foregroundColor(.blue)
                         }
 
                         NavigationLink(destination: GalleryView(), label: {
-                            Image(systemName: "person.crop.circle")})
+                            Image(systemName: "person.crop.circle")
+                                .foregroundColor(.blue)
+                        })
                     }
                 }
             }

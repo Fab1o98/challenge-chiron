@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct JournalHome: View {
-    
+
     @State private var mostrarFormulario = false
     @State private var needsRefresh = false
     @State private var isShowingAddReflection = false
@@ -133,12 +133,14 @@ struct JournalHome: View {
                         print("Buscar")
                     }) {
                         Image(systemName: "magnifyingglass")
+                            .foregroundColor(.blue)
                     }
                     
                     Button(action: {
                         mostrarFormulario = true
                     }) {
                         Image(systemName: "plus")
+                            .foregroundColor(.blue)
                     }
                     .sheet(isPresented: $mostrarFormulario, onDismiss: {
                         needsRefresh.toggle()
@@ -148,6 +150,7 @@ struct JournalHome: View {
                     
                     NavigationLink(destination: GalleryView(), label: {
                         Image(systemName: "person.crop.circle")
+                            .foregroundColor(.blue)
                     })
                 }
             }
