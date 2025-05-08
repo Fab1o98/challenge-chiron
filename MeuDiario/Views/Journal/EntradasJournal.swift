@@ -141,12 +141,14 @@ struct EntradasJournal: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Done") {
-                            emocaoManager.salvarEmocaoJSON(
-                                emocao: emocao?.nome ?? "Books",
+                            if let nomeEmocao = emocao?.nome {
+                                emocaoManager.salvarEmocaoJSON(
+                                    emocao: nomeEmocao,
                                     comentario: texto,
                                     horario: horario,
                                     intensidade: Int(intensidade)
                                 )
+                            }
                             dismiss()
                         }
                     }
