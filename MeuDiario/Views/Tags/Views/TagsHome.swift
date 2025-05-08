@@ -25,6 +25,7 @@ struct TagsHome: View {
                         filteredTags: filteredTags,
                         fireEditing: $isEditing,
                         selectedTag: $selectedTag)
+                    .foregroundColor(.blue)
 
                 Spacer()
             }
@@ -51,6 +52,9 @@ struct TagsHome: View {
                 }
             }
             .searchable(text: $searchText)
+        }
+        .onAppear{
+            tags = TagStorage.load()
         }
     }
 }

@@ -3,13 +3,14 @@ import Foundation
 class EmocaoManager: ObservableObject {
         
     struct RegistrarEmocao: Codable {
+        let id = UUID()
         let emocao: String
         let comentario: String
         let horario: Date
         let intensidade: Int
     }
     
-    private var registros: [RegistrarEmocao] = []
+    @Published var registros: [RegistrarEmocao] = []
     
     private var arquivoURL: URL? {
         FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("registro_emocoes.json")
@@ -69,6 +70,15 @@ class EmocaoManager: ObservableObject {
         } catch{
             print("Erro ao carregar os registros: \(error)")
             return []
+        }
+    }
+    
+    func deletarRegistro(registro: RegistrarEmocao){
+        if let index = registros.firstIndex(where: {$0.id == registro.id}) {
+            registros.remove(at: index)
+            salvarRegistros()
+        } else{
+            print("Registro com ID \(registro.id) não encontrado para deletar.")
         }
     }
 }

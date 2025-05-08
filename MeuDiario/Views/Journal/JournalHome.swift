@@ -16,6 +16,7 @@ struct JournalHome: View {
     @ObservedObject var tags = TagViewModel()
     @EnvironmentObject var diarioViewModel: DiarioViewModel
     @StateObject private var emocaoManager = EmocaoManager()
+    @State private var userTags: [TagsBasicas] = TagStorage.load()
     
     var body: some View {
         NavigationView{
@@ -50,14 +51,12 @@ struct JournalHome: View {
                 Section(header: Text("Entries")
                     .font(.system(size: 17, weight: .bold))
                             .foregroundColor(.black)){
-                    
-                    let registros = emocaoManager.listarRegistros()
-                                        
-                    if registros.isEmpty{
+                                                            
+                    if emocaoManager.registros.isEmpty{
                         Text("Nenhuma entrada regitrada ainda.")
                             .foregroundColor(.gray)
                     } else{
-                        ForEach(registros.sorted(by: { $0.horario > $1.horario}), id: \.horario){ registro in
+                        ForEach(emocaoManager.registros.sorted(by: { $0.horario > $1.horario}), id: \.horario){ registro in
                             ZStack{
                                 HStack{
                                     VStack(alignment: .leading, spacing: 6){
@@ -102,6 +101,13 @@ struct JournalHome: View {
                                 .listRowBackground(Color.clear)
                             }
                         }
+                        .onDelete(perform: { indexSet in
+                                if let index = indexSet.first {
+                                    let registroParaDeletar = emocaoManager.registros.sorted(by: { $0.horario > $1.horario })[index]
+                                    emocaoManager.deletarRegistro(registro: registroParaDeletar)
+                                    userTags[index].qtd -= 1
+                                }
+                            })
                     }
                 }
             }

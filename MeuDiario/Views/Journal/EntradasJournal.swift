@@ -80,7 +80,7 @@ struct EntradasJournal: View {
                             .padding(.vertical, -15)
                             .frame(width: 300, alignment: .leading)
                         HStack {
-                            Text("0")
+                            Text("1")
                                 .font(.system(size: 20))
                                 .fontWeight(.bold)
                             
@@ -118,14 +118,14 @@ struct EntradasJournal: View {
                         LazyVGrid(columns: colunas, spacing: 0){
                             ForEach(userTags, id: \.id){ tag in
                                 Button(action: {
-                                    
+                                    selectedTag = tag.nome
                                 }) {
                                     Text(tag.nome)
                                         .font(.system(size: 15))
                                         .padding()
                                         .overlay(
                                             RoundedRectangle(cornerRadius: 10)
-                                                .stroke(Color.gray.opacity(1), lineWidth: 1)
+                                                .stroke(selectedTag == tag.nome ? Color.blue : Color.gray.opacity(0.2))
                                                 .frame(width: 75, height: 38)
                                                 .background(Color.gray.opacity(0.2))
                                                 .cornerRadius(10)
@@ -155,6 +155,13 @@ struct EntradasJournal: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Done") {
+                            if let index = userTags.firstIndex(where: {$0.nome == selectedTag}) {
+                                userTags[index].qtd += 1
+                                TagStorage.save(userTags)
+                                
+                                
+                            }
+                            
                             emocaoManager.salvarEmocaoJSON(
                                 emocao: emocao?.nome ?? "Joy",
                                     comentario: texto,
