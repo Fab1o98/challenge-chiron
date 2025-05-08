@@ -158,8 +158,6 @@ struct EntradasJournal: View {
                             if let index = userTags.firstIndex(where: {$0.nome == selectedTag}) {
                                 userTags[index].qtd += 1
                                 TagStorage.save(userTags)
-                                
-                                
                             }
                             
                             emocaoManager.salvarEmocaoJSON(

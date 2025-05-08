@@ -13,6 +13,7 @@ struct JournalHome: View {
     @State private var needsRefresh = false
 //    @Binding var corEmocao: TagsBasicas
     @State private var isShowingAddReflection = false
+    @State var selectedTag = "Pride"
     
     @ObservedObject var tags = TagViewModel()
     @EnvironmentObject var diarioViewModel: DiarioViewModel
@@ -57,12 +58,14 @@ struct JournalHome: View {
                 Section(header: Text("Entries")
                     .font(.system(size: 17, weight: .bold))
                             .foregroundColor(.black)){
+                    
+                    let registros = emocaoManager.listarRegistros()
                                                             
-                    if emocaoManager.registros.isEmpty{
+                    if registros.isEmpty{
                         Text("Nenhuma entrada regitrada ainda.")
                             .foregroundColor(.gray)
                     } else{
-                        ForEach(emocaoManager.registros.sorted(by: { $0.horario > $1.horario}), id: \.horario){ registro in
+                        ForEach(registros.sorted(by: { $0.horario > $1.horario}), id: \.horario){ registro in
                             ZStack{
                                 HStack{
                                     VStack(alignment: .leading, spacing: 6){
@@ -108,12 +111,16 @@ struct JournalHome: View {
                             }
                         }
                         .onDelete(perform: { indexSet in
-                                if let index = indexSet.first {
-                                    let registroParaDeletar = emocaoManager.registros.sorted(by: { $0.horario > $1.horario })[index]
-                                    emocaoManager.deletarRegistro(registro: registroParaDeletar)
-                                    userTags[index].qtd -= 1
+                            if let index = indexSet.first {
+                                let registroParaDeletar = emocaoManager.registros.sorted(by: { $0.horario > $1.horario })[index]
+                                emocaoManager.deletarRegistro(registro: registroParaDeletar)
+
+                                if let tagIndex = userTags.firstIndex(where: { $0.nome == registroParaDeletar.emocao }) {
+                                    userTags[tagIndex].qtd -= 1
+                                    TagStorage.save(userTags)
                                 }
-                            })
+                            }
+                        })
                     }
                 }
             }
