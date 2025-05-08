@@ -2,21 +2,21 @@
     {
         "id": 1,
         "nome": "Family",
-        "nomecor": "NadaAtribuido",
+        "nomecor": "Pride",
         "qtd": 0
     },
     
     {
         "id": 2,
         "nome": "Friends",
-        "nomecor": "NadaAtribuido",
+        "nomecor": "Hope",
         "qtd": 0
     },
     
     {
         "id": 3,
         "nome": "Health",
-        "nomecor": "NadaAtribuido",
+        "nomecor": "Sadness",
         "qtd": 0
     },
     
@@ -37,7 +37,7 @@
     {
         "id": 6,
         "nome": "Money",
-        "nomecor": "NadaAtribuido",
+        "nomecor": "Joy",
         "qtd": 0
     }
 ]

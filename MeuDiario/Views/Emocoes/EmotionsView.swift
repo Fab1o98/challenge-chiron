@@ -112,6 +112,9 @@ struct EmotionsView: View {
                     } label: {
                         EmotionCard(emocao: emocao)
                     }
+                    
+                    
+                    
                 }
                 .navigationTitle("Emotions")
                 .padding(.top)

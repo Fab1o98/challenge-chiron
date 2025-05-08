@@ -89,13 +89,15 @@ struct JournalHome: View {
                                         Text("\(registro.intensidade)")
                                             .font(Font.custom("SF Pro", size: 28)
                                                     .weight(.semibold)
-                                            )
-                                        
-                                        Text("Intensidade")
+                                            ).padding(.horizontal, 7)
+                                                                                
+                                        Text(registro.emocao)
                                             .font(Font.custom("Sf Pro", size: 18)
                                                     .weight(.semibold)
                                             )
-                                    }
+                                        
+                                        Spacer ()
+                                    }.frame(width: 118, height: 87, alignment: .center)
                                 }
                                 .frame(width: 310, height: 87)
                                 .background(
@@ -160,8 +162,3 @@ struct JournalHome: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        JournalHome()
-    }
-}

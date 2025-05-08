@@ -153,7 +153,7 @@ struct EntradasJournal: View {
                             dismiss()
                         }
                     }
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarItem(placement: .navigationBarTrailing){
                         Button("Done") {
                             if let index = userTags.firstIndex(where: {$0.nome == selectedTag}) {
                                 userTags[index].qtd += 1
@@ -166,7 +166,6 @@ struct EntradasJournal: View {
                                     horario: horario,
                                     intensidade: Int(intensidade)
                                 )
-                            }
                             dismiss()
                         }
                     }
@@ -179,9 +178,3 @@ struct EntradasJournal: View {
     }
 }
 
-struct EntradasJournal_Previews: PreviewProvider {
-    static var previews: some View {
-        EntradasJournal()
-            .environmentObject(DiarioViewModel())
-    }
-}

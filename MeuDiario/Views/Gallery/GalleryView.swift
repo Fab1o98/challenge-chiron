@@ -79,7 +79,7 @@ struct NextCanvasButton: View {
         let calendar = Calendar.current
         let weekDay = calendar.component(.weekday, from: date)
         
-        if (weekDay == calendar.firstWeekday) {
+        if (calendar.firstWeekday == calendar.firstWeekday) {
             Button {
                 print("Next canvas")
             } label: {
@@ -94,10 +94,14 @@ struct NextCanvasButton: View {
                             .frame(width: 15, height: 15)
                             .foregroundColor(.red)
                     }
-                    Text("Paint")
+                    
+                    NavigationLink(destination: MosaicoView(), label: {
+                        Text("paint")
+                            .fontWeight(.regular)
+                            .foregroundColor(.black)
+                    })
                         .font(.body)
-                        .fontWeight(.regular)
-                        .foregroundColor(.black)
+                        
                 }
             }
             .frame(width: 300, height: 40)

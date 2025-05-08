@@ -91,4 +91,13 @@ class EmocaoManager: ObservableObject {
             }
         }
     }
+    
+    func deletarRegistro(registro: RegistrarEmocao){
+        if let index = registros.firstIndex(where: {$0.id == registro.id}) {
+          registros.remove(at: index)
+          salvarRegistros()
+        } else{
+            print("Registro com ID \(registro.id) não encontrado para deletar.")
+        }
+      }
 }

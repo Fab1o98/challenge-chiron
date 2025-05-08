@@ -27,7 +27,7 @@ struct TagsHome: View {
                         filteredTags: filteredTags,
                         fireEditing: $isEditing,
                         selectedTag: $selectedTag)
-                    .foregroundColor(.blue)
+                    .foregroundColor(.black)
 
                 Spacer()
             }
