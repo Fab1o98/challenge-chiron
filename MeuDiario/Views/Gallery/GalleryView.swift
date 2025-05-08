@@ -1,11 +1,8 @@
 import SwiftUI
 
 struct GalleryView: View {
-//
-//    @Binding var galleryIsShowing: Bool
-    
+
     var body: some View {
-        
         
         VStack {
             Divider().foregroundColor(.black)
@@ -76,8 +73,7 @@ struct GalleryView_Previews: PreviewProvider {
 }
 
 struct NextCanvasButton: View {
-//    @Binding var canPaint: Bool
-    
+
     var body: some View {
         let date = Date()
         let calendar = Calendar.current
@@ -86,7 +82,6 @@ struct NextCanvasButton: View {
         if (weekDay == calendar.firstWeekday) {
             Button {
                 print("Next canvas")
-//                canPaint = false
             } label: {
                 VStack(alignment: .leading, spacing: 5) {
                     HStack {
