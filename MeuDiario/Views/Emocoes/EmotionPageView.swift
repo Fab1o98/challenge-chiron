@@ -8,52 +8,55 @@
 import SwiftUI
 
 struct EmotionPageView: View {
-    var emotionreceive: EmotionData
-    
+    let emotionReceive: EmotionData
+        
     var body: some View {
         
         ScrollView{
             
             VStack(alignment: .leading, spacing: 0){
-                
+
                 ZStack(alignment: .bottomLeading){ // Levar o texto para baixo
-                    Image("matissejoy")
+                    Image(emotionReceive.nomeImagem)
                         .resizable()
                         .scaledToFill()
                         .frame(height: 290)
                         .clipped()
-                    
-                    
+
+
                     VStack(alignment: .leading, spacing: 5){
-                        Text("Aqui vai puxar Titulo")
+                        Text(emotionReceive.nomeTitulo)
                             .font(.title)
+                            .font(Font.custom("SF Pro", size: 35))
+                            .bold()
                             .foregroundColor(.white)
                             .frame(maxHeight: 50)
-                        
-                        Text("Descriçao IMG")
+
+                        Text(emotionReceive.textoObra)
                             .foregroundColor(.white)
+
                     }
                     .padding()
-                }
-                
-                
-                VStack{
                     
-                    Text(emotionreceive.emotion)
+                }
+
+
+                VStack(alignment: .leading, spacing: 16){
+
+                    Text(emotionReceive.cabecalho)
+                        .font(.body)
+                        .font(Font.custom("SF Pro", size: 17))
                         .italic()
                         .bold()
-                        .fontWeight(.medium)
+                        
+
+                    Text(emotionReceive.autorCabecalho)
+                        .font(Font.custom("SF Pro", size: 17))
                     
-                    Text("TEXTO")
-                        .font(.body)
+                    Text(emotionReceive.descricao)
+                        .font(Font.custom("SF Pro", size: 17))
                     
-                    Text("Entradas")
-                        .font(.title3)
-                        .bold()
-                    Image(systemName:"book")
-                    NavigationLink("Proxima Pagina")  {
-                        Text("Pagina 2!!")
-                    }
+
                 }
                 .padding()
             }
@@ -61,11 +64,3 @@ struct EmotionPageView: View {
         .ignoresSafeArea(edges: .top)
     }
 }
-
-
-
-//struct EmotionPageView_Previews: PreviewProvider {
-// static var previews: some View {
-//     EmotionPageView(emotionreceive: )
-//    }
-// }

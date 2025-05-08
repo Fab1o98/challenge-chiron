@@ -40,6 +40,7 @@
 		E6EA488D2DB7D29300C77477 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA488C2DB7D29300C77477 /* Tabbar.swift */; };
 		E6EA488F2DB7D4A400C77477 /* JournalHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EA488E2DB7D4A400C77477 /* JournalHome.swift */; };
 		E705103F2DC0EF2500257A51 /* EmotionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E705103E2DC0EF2500257A51 /* EmotionPageView.swift */; };
+		E70510432DC8DBF500257A51 /* InfoEmocoes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70510422DC8DBF500257A51 /* InfoEmocoes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		E6EA488C2DB7D29300C77477 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		E6EA488E2DB7D4A400C77477 /* JournalHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalHome.swift; sourceTree = "<group>"; };
 		E705103E2DC0EF2500257A51 /* EmotionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionPageView.swift; sourceTree = "<group>"; };
+		E70510422DC8DBF500257A51 /* InfoEmocoes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoEmocoes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 				E69C19272DBBC36000E5E7B3 /* SalvarEmocao.swift */,
 				E62004462DC0FCB80033C888 /* NewTag.swift */,
 				24AACDAB2DC8E09100F2EA02 /* SaveReflection.swift */,
+				E70510422DC8DBF500257A51 /* InfoEmocoes.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				E69C19282DBBC36000E5E7B3 /* SalvarEmocao.swift in Sources */,
 				E6EA488D2DB7D29300C77477 /* Tabbar.swift in Sources */,
 				6C001FA92DBFC0C500AFB48B /* TagGrid.swift in Sources */,
+				E70510432DC8DBF500257A51 /* InfoEmocoes.swift in Sources */,
 				E65326582DA7EFDB00380B93 /* DiarioEntrada.swift in Sources */,
 				E6805C9E2DC2538E0086C531 /* SelectedEmotionView.swift in Sources */,
 				E62004472DC0FCB80033C888 /* NewTag.swift in Sources */,

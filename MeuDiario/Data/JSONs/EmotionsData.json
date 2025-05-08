@@ -1,111 +1,112 @@
 [
-        {
-        "nome": "Joy",
-        "ID": "001",
-        "Cabeçalho": "Joy (in my sense) has indeed one characteristic, and one only, in common with them; the fact that anyone who has experienced it will want it  again...",
-        "AutorCabeçalho": "- C.S. Lewis",
-        "Descrição": "Joy is the state of being that allows one to experience feelings of intense, long-lasting happiness and contentment of life. It is closely related to, and often evoked by, well-being, success, or good fortune.",
-        "NomeObra": "matissejoy",
-        "TextoObra": "Le Bonheur de Vivre, Matisse - 1906"
-    },
-        
-
     {
-        "Nome": "Pride",
-        "Id": "002",
-        "Cabeçalho": "I'm no longer accepting the things I cannot change. I'm changing things I cannot accept",
-        "AutorCabeçalho": "-Angela Davis",
-        "Descrição": "During authentic pride, people experience accurate feelings of  self-worth and a boost in self-esteem. Evolutionary psychologists  believe that authentic pride is adaptive because the pride emotion  encourages us to continue to approach tasks and to succeed. Other ways  authentic pride could be adaptive is by garnering higher social status,  achieving group acceptance, and even promoting helping behaviors.",
-        "NomeObra": "pride",
-        "TextoObra": "Hercules & the Nemean Lion, Peter Paul Rubens - ca.1615"
+        "nomeTitulo": "Joy",
+        "id": "001",
+        "cabecalho": "Joy (in my sense) has indeed one characteristic, and one only, in common with them; the fact that anyone who has experienced it will want it  again...",
+        "autorCabecalho": "- C.S. Lewis",
+        "descricao": "Joy is the state of being that allows one to experience feelings of intense, long-lasting happiness and contentment of life. It is closely related to, and often evoked by, well-being, success, or good fortune.",
+        "nomeImagem": "matissejoy",
+        "textoObra": "Le Bonheur de Vivre, Matisse - 1906",
+        "emotionColor":"Joy"
     },
-
     {
-        "Nome": "Surprise",
-        "Id": "003",
-        "Cabeçalho": "Our c blazes of gladness are commonly kindled by unexpected sparks.",
-        "AutorCabeçalho": "- Samuel Johnson",
-        "Descrição": "Surprise arises when we encounter sudden and unexpected sounds or movements. As  the briefest of the universal emotions, its function is to focus our attention on determining what is happening and whether or not it is dangerous.",
-        "NomeObra": "surprise",
-        "TextoObra": "Tiger in a Tropical Storm, H. Rousseau, 1891"
+        "nomeTitulo": "Pride",
+        "id": "002",
+        "cabecalho": "I'm no longer accepting the things I cannot change. I'm changing things I cannot accept",
+        "autorCabecalho": "-Angela Davis",
+        "descricao": "During authentic pride, people experience accurate feelings of  self-worth and a boost in self-esteem. Evolutionary psychologists  believe that authentic pride is adaptive because the pride emotion  encourages us to continue to approach tasks and to succeed. Other ways  authentic pride could be adaptive is by garnering higher social status,  achieving group acceptance, and even promoting helping behaviors.",
+        "nomeImagem": "pride",
+        "textoObra": "Hercules & the Nemean Lion, Peter Paul Rubens - ca.1615",
+        "emotionColor":"Pride"
     },
-
     {
-        "Nome": "Guilt",
-        "Id": "004",
-        "Cabeçalho": "So full of artless jealousy is guilt, It spills itself in fearing to be spilt.",
-        "AutorCabeçalho": "- William Shakespeare",
-        "Descrição": "Guilt is the sense that harm was done — to you or another — and the blame may fall at your feet. The emotional response that accompanies feeling responsible for a negative outcome.",
-        "NomeObra": "guiltimg",
-        "TextoObra": "The Guilt of Gold Teeth, Basquiat, 1982"
+        "nomeTitulo": "Surprise",
+        "id": "003",
+        "cabecalho": "Our c blazes of gladness are commonly kindled by unexpected sparks.",
+        "autorCabecalho": "- Samuel Johnson",
+        "descricao": "Surprise arises when we encounter sudden and unexpected sounds or movements. As  the briefest of the universal emotions, its function is to focus our attention on determining what is happening and whether or not it is dangerous.",
+        "nomeImagem": "surprise",
+        "textoObra": "Tiger in a Tropical Storm, H. Rousseau, 1891",
+        "emotionColor":"Surprise"
     },
-
     {
-        "Nome": "Envy",
-        "Id": "005",
-        "Cabeçalho": "All I see is what I should be",
-        "AutorCabeçalho": "-Olvia Rodrigo",
-        "Descrição": "Envy is an emotion which occurs when a person lacks another's quality, skill, achievement, or possession and either desires it or wishes that the other lacked it. Envy can also refer to the wish for another person to lack something  one already possesses so as to remove the equality of possession between both parties.",
-        "NomeObra": "envyimg",
-        "TextoObra": "Jealousy, Edvard Munch, 1913"
+        "nomeTitulo": "Guilt",
+        "id": "004",
+        "cabecalho": "So full of artless jealousy is guilt, It spills itself in fearing to be spilt.",
+        "autorCabecalho": "- William Shakespeare",
+        "descricao": "Guilt is the sense that harm was done — to you or another — and the blame may fall at your feet. The emotional response that accompanies feeling responsible for a negative outcome.",
+        "nomeImagem": "guiltimg",
+        "textoObra": "The Guilt of Gold Teeth, Basquiat, 1982",
+        "emotionColor":"Guilt"
     },
-
     {
-        "Nome": "Sadness",
-        "Id": "006",
-        "Cabeçalho": "Tears are words that need to be written.",
-        "AutorCabeçalho": "- Paulo Coelho",
-        "Descrição": "What might sadness be trying to tell us? If we think about our life  experiences and the times we've felt sad, it is often related to a  relationship, a loss, or a major change in our lives.",
-        "NomeObra": "sadnessimg",
-        "TextoObra": "x"
+        "nomeTitulo": "Envy",
+        "id": "005",
+        "cabecalho": "All I see is what I should be",
+        "autorCabecalho": "-Olvia Rodrigo",
+        "descricao": "Envy is an emotion which occurs when a person lacks another's quality, skill, achievement, or possession and either desires it or wishes that the other lacked it. Envy can also refer to the wish for another person to lack something  one already possesses so as to remove the equality of possession between both parties.",
+        "nomeImagem": "envyimg",
+        "textoObra": "Jealousy, Edvard Munch, 1913",
+        "emotionColor":"Envy"
     },
-
     {
-        "Nome": "Shame",
-        "Id": "007",
-        "Cabeçalho": "Once we realize that imperfect understanding is the human condition, there is no shame in being wrong, only in failing to correct our mistakes.",
-        "AutorCabeçalho": "- George Soros",
-        "Descrição": ".",
-        "NomeObra": "shameimg",
-        "TextoObra": "Susanna and the Elders, Artemisia Gentileschi, 1622"
+        "nomeTitulo": "Sadness",
+        "id": "006",
+        "cabecalho": "Tears are words that need to be written.",
+        "autorCabecalho": "- Paulo Coelho",
+        "descricao": "What might sadness be trying to tell us? If we think about our life  experiences and the times we've felt sad, it is often related to a  relationship, a loss, or a major change in our lives.",
+        "nomeImagem": "sadnessimg",
+        "textoObra": "x",
+        "emotionColor":"Sadness"
     },
-
     {
-        "Nome": "Anger",
-        "Id": "008",
-        "Cabeçalho": "When angry, count four. When very angry, swear.",
-        "AutorCabeçalho":"- Mark Twain",
-        "Descrição":"Anger, also known as wrath or rage, is an intense emotional state involving a strong, uncomfortable and non-cooperative response to a perceived provocation, hurt, or threat. It is a normal, natural, and mature emotion experienced by virtually all humans at times, and as something that has functional value for survival.",
-        "NomeObra": "angerimg",
-        "TextoObra": "Dog Woman, Paula Rego, 1994"
+        "nomeTitulo": "Shame",
+        "id": "007",
+        "cabecalho": "Once we realize that imperfect understanding is the human condition, there is no shame in being wrong, only in failing to correct our mistakes.",
+        "autorCabecalho": "- George Soros",
+        "descricao": ".",
+        "nomeImagem": "shameimg",
+        "textoObra": "Susanna and the Elders, Artemisia Gentileschi, 1622",
+        "emotionColor":"Shame"
     },
-
     {
-        "Nome": "Relief",
-        "Id": "009",
-        "Cabeçalho": "When I finish writing a piece of work, it provides a sense of relief, knowing that something previously unknown and unthought of has come into existence.",
-        "AutorCabeçalho": "- Suman Pokhrel",
-        "Descrição": "Relief is a positive emotion experienced when something unpleasant, painful or distressing has not happened or has come to an end.",
-        "NomeObra":"reliefimg",
-        "TextoObra":"Louise Tiffany, Reading; Louis C. Tiffany, 1888"
+        "nomeTitulo": "Anger",
+        "id": "008",
+        "cabecalho": "When angry, count four. When very angry, swear.",
+        "autorCabecalho": "- Mark Twain",
+        "descricao": "Anger, also known as wrath or rage, is an intense emotional state involving a strong, uncomfortable and non-cooperative response to a perceived provocation, hurt, or threat. It is a normal, natural, and mature emotion experienced by virtually all humans at times, and as something that has functional value for survival.",
+        "nomeImagem": "angerimg",
+        "textoObra": "Dog Woman, Paula Rego, 1994",
+        "emotionColor":"Anger"
     },
-
     {
-        "Nome": "Hope",
-        "Id":"010",
-        "Cabeçalho":"Shoot for the moon, even if you fail, you'll land among the stars",
-        "AutorCabeçalho":"- Cecelia Ahern",
-        "Descrição": "Hope is an optimistic state of mind that is based on an expectation of positive outcomes with respect to events and circumstances in one's own life, or the world at large.",
-        "NomeObra": "hopeimg",
-        "TextoObra": "Tree of Hope, Remain Strong; Frida Kahlo, 1946"
+        "nomeTitulo": "Relief",
+        "id": "009",
+        "cabecalho": "When I finish writing a piece of work, it provides a sense of relief, knowing that something previously unknown and unthought of has come into existence.",
+        "autorCabecalho": "- Suman Pokhrel",
+        "descricao": "Relief is a positive emotion experienced when something unpleasant, painful or distressing has not happened or has come to an end.",
+        "nomeImagem": "reliefimg",
+        "textoObra": "Louise Tiffany, Reading; Louis C. Tiffany, 1888",
+        "emotionColor":"Relief"
+    },
+    {
+        "nomeTitulo": "Hope",
+        "id": "010",
+        "cabecalho": "Shoot for the moon, even if you fail, you'll land among the stars",
+        "autorCabecalho": "- Cecelia Ahern",
+        "descricao": "Hope is an optimistic state of mind that is based on an expectation of positive outcomes with respect to events and circumstances in one's own life, or the world at large.",
+        "nomeImagem": "hopeimg",
+        "textoObra": "Tree of Hope, Remain Strong; Frida Kahlo, 1946",
+        "emotionColor":"Hope"
     },
     
     {
-        "Nome": "Anxiety",
-        "Id":"011",
-        "Cabeçalho":"Anxiety was born in the very same moment as mankind. And since we will never be able to master it, we will have to learn to live with it—just as we have learned to live with storms.",
-        "AutorCabeçalho":"- Paulo Coelho",
-        "Descrição": "Anxiety is an emotion characterised by an unpleasant state of inner turmoil and includes feelings of dread over anticipated events.",
-        "NomeObra": "anxietyimg",
-        "TextoObra": "The Persistence of Memory, Salvador Dalí,  1931"
+        "nomeTitulo": "Anxiety",
+        "id":"011",
+        "cabecalho":"Anxiety was born in the very same moment as mankind. And since we will never be able to master it, we will have to learn to live with it—just as we have learned to live with storms.",
+        "autorCabecalho":"- Paulo Coelho",
+        "descricao": "Anxiety is an emotion characterised by an unpleasant state of inner turmoil and includes feelings of dread over anticipated events.",
+        "nomeImagem": "anxietyimg",
+        "textoObra": "The Persistence of Memory, Salvador Dalí,  1931",
+        "emotionColor": "Anxiety"
     }]
