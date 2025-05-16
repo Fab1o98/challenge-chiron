@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E65326452DA7EF9700380B93"
-               BuildableName = "MeuDiario.app"
+               BuildableName = "The Emotinal Gallery.app"
                BlueprintName = "MeuDiario"
                ReferencedContainer = "container:MeuDiario.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E65326452DA7EF9700380B93"
-            BuildableName = "MeuDiario.app"
+            BuildableName = "The Emotinal Gallery.app"
             BlueprintName = "MeuDiario"
             ReferencedContainer = "container:MeuDiario.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E65326452DA7EF9700380B93"
-            BuildableName = "MeuDiario.app"
+            BuildableName = "The Emotinal Gallery.app"
             BlueprintName = "MeuDiario"
             ReferencedContainer = "container:MeuDiario.xcodeproj">
          </BuildableReference>

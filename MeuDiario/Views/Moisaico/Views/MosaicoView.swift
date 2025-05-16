@@ -24,7 +24,7 @@ struct MosaicoView: View {
     private var tamanho: CGFloat { 40 }
 
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 8) {
             // Grid
             VStack(spacing: 0) {
                 ForEach(0..<linhas, id: \.self) { y in
@@ -127,14 +127,14 @@ struct MosaicoView: View {
             var pintou = false
             if let (xA, yA) = pos {
                 for _ in 0..<12 {
-                    let dx = Int.random(in: -1...1)
-                    let dy = Int.random(in: -1...1)
+                    let dx = Int.random(in: 0...1)
+                    let dy = Int.random(in: 0...1)
                     let nx = xA + dx, ny = yA + dy
 
                     if (0..<colunas).contains(nx),
                        (0..<linhas).contains(ny),
                        quadradinhos[ny][nx] == [0,0,0],
-                       crossMagnitudeSquared(corEmo, quadradinhos[ny][nx]) < 700000000 {
+                       crossMagnitudeSquared(corEmo, quadradinhos[ny][nx]) < 750000000 {
 
                         quadradinhos[ny][nx] = corEmo
                         estoque[emo]! -= 1
